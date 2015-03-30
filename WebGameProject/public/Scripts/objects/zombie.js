@@ -3,10 +3,10 @@ var objects;
 (function (objects) {
     // Zombie class
     var Zombie = (function () {
-        function Zombie(stage, game) {
+        function Zombie(stage, game, kind) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "zombie");
+            this.image = new createjs.Sprite(managers.Assets.atlas, kind);
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;

@@ -9,10 +9,10 @@ module objects {
         height: number;
         dy: number;
         dx: number;
-        constructor(stage: createjs.Stage, game: createjs.Container) {
+        constructor(stage: createjs.Stage, game: createjs.Container, kind:string) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "zombie");
+            this.image = new createjs.Sprite(managers.Assets.atlas, kind);
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;

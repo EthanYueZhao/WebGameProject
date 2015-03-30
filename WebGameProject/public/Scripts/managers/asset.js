@@ -15,6 +15,7 @@ var managers;
         "frames": { width: 32, height: 32, count: 56, regX: 0, regY: 0 },
         "animations": {
             "zombie": [6, 11],
+            "zombie2": [12, 17],
             "instructionsButton": [1],
             "cherry": [19],
             "player": [0, 5],
