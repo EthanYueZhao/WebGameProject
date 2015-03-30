@@ -2918,7 +2918,7 @@ var prim;
         });
     }
 
-    prim = function prim() {
+    prim = function () {
         var p,
             ok = [],
             fail = [];

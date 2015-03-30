@@ -1,5 +1,5 @@
 /// <reference path="../objects/zombie.ts" />
-/// <reference path="../objects/cherry.ts" />
+/// <reference path="../objects/food.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 var managers;

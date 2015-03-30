@@ -1,6 +1,6 @@
 ﻿/// <reference path="../objects/button.ts" />
 /// <reference path="../objects/zombie.ts" />
-/// <reference path="../objects/cherry.ts" />
+/// <reference path="../objects/food.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/background.ts" />
 /// <reference path="../objects/player.ts" />
@@ -11,6 +11,7 @@ module states {
     export function playState() {
         background.update();
         cherry.update();
+        bottles.update();
         player.update();
         document.onkeydown = handleKeyDown;
         for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
@@ -18,6 +19,7 @@ module states {
         }
 
         collision.update();
+        collision2.update();
         scoreboard.update();
 
         if (scoreboard.lives <= 0) {
@@ -42,7 +44,8 @@ module states {
 
         // Instantiate Game Objects
         background = new objects.Background(stage, game);
-        cherry = new objects.Cherry(stage, game);
+        cherry = new objects.Food(stage, game, "cherry");
+        bottles = new objects.Food(stage, game, "bottles");
         player = new objects.Player(stage, game);
 
         // Show Cursor
@@ -58,6 +61,7 @@ module states {
 
         // Instantiate Collision Manager
         collision = new managers.Collision(player, cherry, zombies, scoreboard);
+        collision2 = new managers.Collision(player, bottles, zombies, scoreboard);
 
         stage.addChild(game);
     }

@@ -57,7 +57,7 @@
     <Compile Include="public\Scripts\managers\collision.js" />
     <Compile Include="public\Scripts\objects\background.js" />
     <Compile Include="public\Scripts\objects\button.js" />
-    <Compile Include="public\Scripts\objects\cherry.js" />
+    <Compile Include="public\Scripts\objects\food.js" />
     <Compile Include="public\Scripts\objects\label.js" />
     <Compile Include="public\Scripts\objects\player.js" />
     <Compile Include="public\Scripts\objects\scoreboard.js" />
@@ -88,7 +88,7 @@
     <Content Include="public\Scripts\managers\collision.js.map" />
     <Content Include="public\Scripts\objects\background.js.map" />
     <Content Include="public\Scripts\objects\button.js.map" />
-    <Content Include="public\Scripts\objects\cherry.js.map" />
+    <Content Include="public\Scripts\objects\food.js.map" />
     <Content Include="public\Scripts\objects\label.js.map" />
     <Content Include="public\Scripts\objects\player.js.map" />
     <Content Include="public\Scripts\objects\scoreboard.js.map" />
@@ -140,7 +140,7 @@
     <TypeScriptCompile Include="public\Scripts\managers\collision.ts" />
     <TypeScriptCompile Include="public\Scripts\objects\background.ts" />
     <TypeScriptCompile Include="public\Scripts\objects\button.ts" />
-    <TypeScriptCompile Include="public\Scripts\objects\cherry.ts" />
+    <TypeScriptCompile Include="public\Scripts\objects\food.ts" />
     <TypeScriptCompile Include="public\Scripts\objects\label.ts" />
     <TypeScriptCompile Include="public\Scripts\objects\player.ts" />
     <TypeScriptCompile Include="public\Scripts\objects\scoreboard.ts" />

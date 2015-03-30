@@ -16,7 +16,7 @@ var managers;
         "animations": {
             "zombie": [6, 11],
             "zombie2": [12, 17],
-            "instructionsButton": [1],
+            "bottles": [18],
             "cherry": [19],
             "player": [0, 5],
         }

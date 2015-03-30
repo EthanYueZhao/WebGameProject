@@ -1,5 +1,5 @@
 ﻿/// <reference path="../objects/zombie.ts" />
-/// <reference path="../objects/cherry.ts" />
+/// <reference path="../objects/food.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 
@@ -8,11 +8,11 @@ module managers {
     export class Collision {
         // class variables
         private plane: objects.Player;
-        private island: objects.Cherry;
+        private island: objects.Food;
         private clouds = [];
         private scoreboard: objects.Scoreboard;
 
-        constructor(plane: objects.Player, island: objects.Cherry, clouds, scoreboard: objects.Scoreboard) {
+        constructor(plane: objects.Player, island: objects.Food, clouds, scoreboard: objects.Scoreboard) {
             this.plane = plane;
             this.island = island;
             this.clouds = clouds;

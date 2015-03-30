@@ -1,4 +1,5 @@
-﻿/// <reference path="lib/easeljs.d.ts" />
+﻿'use strict'
+/// <reference path="lib/easeljs.d.ts" />
 /// <reference path="lib/createjs-lib.d.ts" />
 /// <reference path="constants.ts" />
 /// <reference path="managers/asset.ts" />
@@ -19,17 +20,19 @@
 // author: Yue Zhao
 // last edited at Mar-19,2015
 
-'use strict'
+
 var stage: createjs.Stage;
 var game: createjs.Container;
 
 var background: objects.Background;
 var player: objects.Player;
-var cherry: objects.Cherry;
+var cherry: objects.Food;
+var bottles: objects.Food;
 var zombies = []; // Clouds array;
 var scoreboard: objects.Scoreboard;
 
 var collision: managers.Collision;
+var collision2: managers.Collision;
 
 var tryAgain: objects.Button;
 var playButton: objects.Button;

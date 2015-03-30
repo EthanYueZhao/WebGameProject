@@ -1,3 +1,4 @@
+'use strict';
 /// <reference path="lib/easeljs.d.ts" />
 /// <reference path="lib/createjs-lib.d.ts" />
 /// <reference path="constants.ts" />
@@ -17,15 +18,16 @@
 // file name: game.ts
 // author: Yue Zhao
 // last edited at Mar-19,2015
-'use strict';
 var stage;
 var game;
 var background;
 var player;
 var cherry;
+var bottles;
 var zombies = []; // Clouds array;
 var scoreboard;
 var collision;
+var collision2;
 var tryAgain;
 var playButton;
 var instructionButton;
