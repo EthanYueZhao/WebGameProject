@@ -8,7 +8,7 @@
     <EnableTypeScript>true</EnableTypeScript>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
     <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
-    <NameOfLastUsedPublishProfile>WebGameProject</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>webgameproject</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -44,7 +44,7 @@
     <Compile Include="public\Scripts\filters\ColorMatrixFilter.js" />
     <Compile Include="public\Scripts\filters\Filter.js" />
     <Compile Include="public\Scripts\game.js" />
-    <None Include="WebGameProject.pubxml" />
+    <None Include="webgameproject.pubxml" />
     <None Include="public\Scripts\_references.js" />
     <Compile Include="public\Scripts\lib\easeljs-0.7.1.min.js" />
     <None Include="public\Scripts\lib\jquery-2.1.1.intellisense.js" />
@@ -70,7 +70,6 @@
     <Compile Include="public\Scripts\states\play.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
-    <Compile Include="bin\www" />
     <Content Include="package.json" />
     <Content Include="public\assets\images\bg.png" />
     <Content Include="public\assets\images\bg2.png" />
@@ -124,11 +123,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
-    <Content Include="Web.Debug.config" />
-    <Content Include="bin\ChangeConfig.ps1" />
-    <Content Include="bin\download.ps1" />
-    <Content Include="bin\setup_web.cmd" />
-    <Content Include="bin\node.cmd" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="public\Scripts\constants.ts" />
