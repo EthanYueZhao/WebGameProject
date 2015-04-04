@@ -28,7 +28,8 @@ var background: objects.Background;
 var player: objects.Player;
 var cherry: objects.Food;
 var bottles: objects.Food;
-var zombies = []; // Clouds array;
+var zombies = []; // zombies array;
+
 var scoreboard: objects.Scoreboard;
 
 var collision: managers.Collision;

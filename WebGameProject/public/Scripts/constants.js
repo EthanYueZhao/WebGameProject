@@ -6,7 +6,7 @@ var constants;
     constants.GAME_OVER_STATE = 2;
     constants.INSTRUCTION_STATE = 3;
     // Game Constants
-    constants.ZOMBIE_NUM = 5;
+    constants.ZOMBIE_NUM = 2;
     constants.LABEL_FONT = "50px Vijaya";
     constants.LABEL_COLOUR = "#FF0000";
     constants.PLANE_LIVES = 3;

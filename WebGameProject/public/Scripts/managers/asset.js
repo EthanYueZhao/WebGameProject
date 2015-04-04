@@ -14,8 +14,8 @@ var managers;
         "images": ["assets/images/Scavengers_SpriteSheet.png"],
         "frames": { width: 32, height: 32, count: 56, regX: 0, regY: 0 },
         "animations": {
-            "zombie": [6, 11],
-            "zombie2": [12, 17],
+            "zombie0": [6, 11],
+            "zombie1": [12, 17],
             "bottles": [18],
             "cherry": [19],
             "player": [0, 5],

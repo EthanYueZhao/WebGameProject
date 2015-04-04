@@ -24,7 +24,7 @@ var background;
 var player;
 var cherry;
 var bottles;
-var zombies = []; // Clouds array;
+var zombies = []; // zombies array;
 var scoreboard;
 var collision;
 var collision2;
