@@ -51,9 +51,9 @@ module states {
         // Show Cursor
         stage.cursor = "none";
 
-        // Create multiple clouds
+        // Create 2 zombies
         for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
-            zombies[count] = new objects.Zombie(stage, game,"zombie2");
+            zombies[count] = new objects.Zombie(stage, game,"zombie"+count);
         }
 
         // Display Scoreboard
