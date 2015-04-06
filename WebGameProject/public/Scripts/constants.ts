@@ -4,6 +4,10 @@
     export var PLAY_STATE: number = 1;
     export var GAME_OVER_STATE: number = 2;
     export var INSTRUCTION_STATE: number = 3;
+    export var LEVEL_SELECT_STATE: number = 4;
+    export var LEVEL_1_STATE: number = 5;
+    export var LEVEL_2_STATE: number = 6;
+    export var LEVEL_3_STATE: number = 7;
 
     // Game Constants
     export var ZOMBIE_NUM: number = 2;

@@ -145,6 +145,10 @@
     <TypeScriptCompile Include="public\Scripts\objects\zombie.ts" />
     <TypeScriptCompile Include="public\Scripts\states\gameover.ts" />
     <TypeScriptCompile Include="public\Scripts\states\instruction.ts" />
+    <TypeScriptCompile Include="public\Scripts\states\level.ts" />
+    <TypeScriptCompile Include="public\Scripts\states\level_1.ts" />
+    <TypeScriptCompile Include="public\Scripts\states\level_2.ts" />
+    <TypeScriptCompile Include="public\Scripts\states\level_3.ts" />
     <TypeScriptCompile Include="public\Scripts\states\menu.ts" />
     <TypeScriptCompile Include="public\Scripts\states\play.ts" />
   </ItemGroup>

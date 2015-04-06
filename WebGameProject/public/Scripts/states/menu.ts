@@ -13,7 +13,7 @@ module states {
         player.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
-        currentState = constants.PLAY_STATE;
+        currentState = constants.LEVEL_SELECT_STATE;
         changeState(currentState);
     }
 
