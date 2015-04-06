@@ -45,6 +45,7 @@ function init() {
     createjs.Ticker.setFPS(60);
     createjs.Ticker.addEventListener("tick", gameLoop);
     optimizeForMobile();
+    createjs.Sound.play('BackGroundMusic', { loop: -1 });
     currentState = constants.MENU_STATE;
     changeState(currentState);
 }

@@ -30,6 +30,7 @@ var states;
         game = new createjs.Container();
         // Instantiate Game Objects
         background = new objects.Background(stage, game);
+        player = new objects.Player(stage, game);
         // Show Cursor
         stage.cursor = "default";
         // Display Instrucion title
@@ -44,6 +45,8 @@ var states;
         playButton = new objects.Button(stage.canvas.width / 2, 300, "playBtn");
         game.addChild(playButton);
         playButton.addEventListener("click", states.playButtonClicked);
+        player.image.x = stage.canvas.width / 2 - playButton.regX - player.width;
+        player.image.y = playButton.y;
         stage.addChild(game);
     }
     states.instruction = instruction;

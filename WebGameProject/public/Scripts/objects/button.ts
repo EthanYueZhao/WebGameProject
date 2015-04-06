@@ -16,14 +16,21 @@ module objects {
             this.cursor = 'pointer';
             this.on('rollover', this.onButtonOver);
             this.on('rollout', this.onButtonOut);
+            this.on('mousedown', this.onButtonDown);
         }
 
         onButtonOver() {
             this.alpha = 0.8;
+            createjs.Sound.play("Select", { loop: 1 });
         }
 
         onButtonOut() {
             this.alpha = 1;
+        }
+
+        onButtonDown() {
+            this.alpha = 0.4;
+            createjs.Sound.play("Click", { loop: 1 });
         }
     }
 } 

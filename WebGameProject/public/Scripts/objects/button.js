@@ -23,12 +23,18 @@ var objects;
             this.cursor = 'pointer';
             this.on('rollover', this.onButtonOver);
             this.on('rollout', this.onButtonOut);
+            this.on('mousedown', this.onButtonDown);
         };
         Button.prototype.onButtonOver = function () {
             this.alpha = 0.8;
+            createjs.Sound.play("Select", { loop: 1 });
         };
         Button.prototype.onButtonOut = function () {
             this.alpha = 1;
+        };
+        Button.prototype.onButtonDown = function () {
+            this.alpha = 0.4;
+            createjs.Sound.play("Click", { loop: 1 });
         };
         return Button;
     })(createjs.Sprite);

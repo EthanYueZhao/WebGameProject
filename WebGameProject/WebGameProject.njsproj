@@ -76,9 +76,11 @@
     <Content Include="public\assets\images\buttons.png" />
     <Content Include="public\assets\images\loading.jpg" />
     <Content Include="public\assets\images\Scavengers_SpriteSheet.png" />
+    <Content Include="public\assets\sounds\clickSound.wav" />
     <Content Include="public\assets\sounds\Crash2.wav" />
     <Content Include="public\assets\sounds\Pickup5.wav" />
     <Content Include="public\assets\sounds\scavengers_music.mp3" />
+    <Content Include="public\assets\sounds\selectSound.wav" />
     <Content Include="public\css\app.css" />
     <Content Include="public\css\normalize.css" />
     <Content Include="public\index.html" />
