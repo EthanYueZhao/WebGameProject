@@ -7,7 +7,9 @@ var managers;
         { id: "bg", src: "assets/images/bg2.png" },
         { id: "BackGroundMusic", src: "assets/sounds/scavengers_music.mp3" },
         { id: "Crash", src: "assets/sounds/Crash2.wav" },
-        { id: "Pickup", src: "assets/sounds/Pickup5.wav" }
+        { id: "Pickup", src: "assets/sounds/Pickup5.wav" },
+        { id: "Select", src: "assets/sounds/selectSound.wav" },
+        { id: "Click", src: "assets/sounds/clickSound.wav" }
     ];
     // SpriteSheet Data Object
     var spriteSheetData = {

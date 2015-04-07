@@ -14,13 +14,23 @@ var states;
         player.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
-        currentState = constants.PLAY_STATE;
+        currentState = constants.LEVEL_SELECT_STATE;
         changeState(currentState);
     }
     states.playButtonClicked = playButtonClicked;
+    function playButtonOver(event) {
+        player.image.x = stage.canvas.width / 2 - playButton.regX - player.width;
+        player.image.y = playButton.y;
+    }
+    states.playButtonOver = playButtonOver;
+    function instructionButtonOver(event) {
+        player.image.x = stage.canvas.width / 2 - instructionButton.regX - player.width;
+        player.image.y = instructionButton.y;
+    }
+    states.instructionButtonOver = instructionButtonOver;
     function menuState() {
         //ocean.update();
-        player.update();
+        //player.update();
     }
     states.menuState = menuState;
     function menu() {
@@ -39,10 +49,14 @@ var states;
         playButton = new objects.Button(stage.canvas.width / 2, 200, "playBtn");
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
+        playButton.addEventListener("rollover", playButtonOver);
         // Display Instruction Button
         instructionButton = new objects.Button(stage.canvas.width / 2, 280, "instructionBtn");
         game.addChild(instructionButton);
         instructionButton.addEventListener("click", states.instructionButtonClicked);
+        instructionButton.addEventListener("rollover", instructionButtonOver);
+        player.image.x = stage.canvas.width / 2 - playButton.regX - player.width;
+        player.image.y = playButton.y;
         stage.addChild(game);
     }
     states.menu = menu;

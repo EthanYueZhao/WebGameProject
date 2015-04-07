@@ -13,6 +13,10 @@
 /// <reference path="managers/collision.ts" />
 /// <reference path="states/play.ts" />
 /// <reference path="states/menu.ts" />
+/// <reference path="states/level.ts" />
+/// <reference path="states/level_1.ts" />
+/// <reference path="states/level_2.ts" />
+/// <reference path="states/level_3.ts" />
 /// <reference path="states/gameover.ts" />
 
 // game name: Last Survivor
@@ -31,6 +35,7 @@ var bottles: objects.Food;
 var zombies = []; // zombies array;
 
 var scoreboard: objects.Scoreboard;
+var levelLabel: objects.Label;
 
 var collision: managers.Collision;
 var collision2: managers.Collision;
@@ -42,7 +47,9 @@ var instructionButton: objects.Button;
 var currentState: number;
 var currentStateFunction;
 
-
+var level_1_Button: objects.Button;
+var level_2_Button: objects.Button;
+var level_3_Button: objects.Button;
 
 // Preload function - Loads Assets and initializes game;
 function preload(): void {
@@ -57,6 +64,7 @@ function init(): void {
     createjs.Ticker.setFPS(60);
     createjs.Ticker.addEventListener("tick", gameLoop);
     optimizeForMobile();
+    createjs.Sound.play('BackGroundMusic', { loop: -1 });
 
     currentState = constants.MENU_STATE;
     changeState(currentState);
@@ -97,9 +105,35 @@ function changeState(state: number): void {
             states.gameOver();
             break;
 
+        case constants.LEVEL_SELECT_STATE:
+            currentStateFunction = states.gameOverState;
+            // instantiate level select screen
+            states.levelSelect();
+            break;
+
+            
+        case constants.LEVEL_1_STATE:
+            currentStateFunction = states.level_1_State;
+            // instantiate level 1 screen
+            states.levelNo1();
+            break;
+
+        case constants.LEVEL_2_STATE:
+            currentStateFunction = states.level_2_State;
+            // instantiate level 2 screen
+            states.levelNo2();
+            break;
+
+        case constants.LEVEL_3_STATE:
+            currentStateFunction = states.level_3_State;
+            // instantiate level 3 screen
+            states.levelNo3();
+            break;
+            
+
         case constants.INSTRUCTION_STATE:
             currentStateFunction = states.instructionState;
-            // instantiate game over screen
+            // instantiate instruction screen
             states.instruction();
             break;
 

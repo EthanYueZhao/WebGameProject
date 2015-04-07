@@ -5,6 +5,10 @@ var constants;
     constants.PLAY_STATE = 1;
     constants.GAME_OVER_STATE = 2;
     constants.INSTRUCTION_STATE = 3;
+    constants.LEVEL_SELECT_STATE = 4;
+    constants.LEVEL_1_STATE = 5;
+    constants.LEVEL_2_STATE = 6;
+    constants.LEVEL_3_STATE = 7;
     // Game Constants
     constants.ZOMBIE_NUM = 2;
     constants.LABEL_FONT = "50px Vijaya";
