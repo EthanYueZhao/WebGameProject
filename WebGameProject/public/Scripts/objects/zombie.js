@@ -15,17 +15,27 @@ var objects;
             game.addChild(this.image);
         }
         Zombie.prototype.update = function () {
-            this.image.y -= this.dy;
-            this.image.x -= this.dx;
-            if (this.image.x < -this.width) {
-                this.reset();
+            if (player.image.y > this.image.y) {
+                this.image.y += this.dy;
             }
+            else {
+                this.image.y -= this.dy;
+            }
+            if (player.image.x > this.image.x) {
+                this.image.x += this.dx;
+            }
+            else {
+                this.image.x -= this.dx;
+            }
+            //if (this.image.x < -this.width) {
+            //    this.reset();
+            //}
         };
         Zombie.prototype.reset = function () {
             this.image.x = this.stage.canvas.width + this.width;
             this.image.y = Math.floor(Math.random() * this.stage.canvas.height);
-            this.dx = Math.floor(Math.random() * 5 + 5);
-            this.dy = Math.floor(Math.random() * -3) + Math.floor(Math.random() * 3);
+            this.dx = Math.random() * 0.9 + 0.1;
+            this.dy = Math.random() * 0.9 + 0.1;
         };
         Zombie.prototype.destroy = function () {
             game.removeChild(this.image);
