@@ -28,7 +28,7 @@ module states {
     }
 
     export function menuState() {
-        //ocean.update();
+        background.update();
         //player.update();
     }
 
@@ -56,7 +56,7 @@ module states {
         playButton.addEventListener("rollover", playButtonOver);
 
         // Display Instruction Button
-        instructionButton = new objects.Button(stage.canvas.width / 2, 280, "instructionBtn");
+        instructionButton = new objects.Button(stage.canvas.width / 2, 300, "instructionBtn");
         game.addChild(instructionButton);
         instructionButton.addEventListener("click", instructionButtonClicked);
         instructionButton.addEventListener("rollover", instructionButtonOver);

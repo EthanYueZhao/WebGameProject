@@ -13,13 +13,19 @@ module states {
     }
 
     // Restart Game when Try Again Button is clicked
-    export function tryAgainClicked(event: MouseEvent) {
+    export function mainMenuClicked(event: MouseEvent) {
         stage.removeChild(game);
         game.removeAllChildren();
         game.removeAllEventListeners();
-        currentState = constants.PLAY_STATE;
+        currentState = constants.MENU_STATE;
         changeState(currentState);
     }
+
+    export function menuButtonOver(event: MouseEvent) {
+        player.image.x = stage.canvas.width / 2 - mainMenu.regX - player.width;
+        player.image.y = mainMenu.y;
+    }
+
 
     // Game Over Scene
     export function gameOver() {
@@ -49,13 +55,13 @@ module states {
         finalScore = new objects.Label(stage.canvas.width / 2, 160, scoreboard.score.toString());
         game.addChild(finalScore);
 
-        // Display Try Again Button
-        tryAgain = new objects.Button(stage.canvas.width / 2, 300, "againBtn");
-        game.addChild(tryAgain);
-        tryAgain.addEventListener("click", tryAgainClicked);
+        mainMenu = new objects.Button(stage.canvas.width / 2, 300, "menuBtn");
+        game.addChild(mainMenu);
+        mainMenu.addEventListener("click", mainMenuClicked);
+        mainMenu.addEventListener("rollover", menuButtonOver);
 
-        player.image.x = stage.canvas.width / 2 - tryAgain.regX - player.width;
-        player.image.y = tryAgain.y;
+        player.image.x = stage.canvas.width / 2 - mainMenu.regX - player.width;
+        player.image.y = mainMenu.y;
 
         stage.addChild(game);
 

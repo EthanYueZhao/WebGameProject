@@ -82,8 +82,8 @@ var states;
         game.addChild(level_3_Button);
         level_3_Button.addEventListener("click", level_3_Clicked);
         level_3_Button.addEventListener("rollover", level_3_Over);
-        player.image.x = stage.canvas.width / 2 - playButton.regX - player.width;
-        player.image.y = playButton.y;
+        player.image.x = stage.canvas.width / 2 - level_2_Button.regX - player.width;
+        player.image.y = level_2_Button.y;
         stage.addChild(game);
     }
     states.levelSelect = levelSelect;
