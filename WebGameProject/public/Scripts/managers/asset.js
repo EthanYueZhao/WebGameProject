@@ -33,7 +33,8 @@ var managers;
             [2, 155, 187, 75],
             [191, 2, 187, 75],
             [191, 79, 187, 75],
-            [191, 155, 187, 75]
+            [191, 155, 187, 75],
+            [380, 2, 187, 75]
         ],
         "animations": {
             "playBtn": [0],
@@ -41,7 +42,8 @@ var managers;
             "againBtn": [2],
             "normalBtn": [3],
             "veteranBtn": [4],
-            "hellBtn": [5]
+            "hellBtn": [5],
+            "mainmenuBtn": [6]
         }
     };
     // Asset Manager Class
