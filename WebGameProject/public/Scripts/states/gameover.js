@@ -48,7 +48,7 @@ var states;
         // Display Final Score
         finalScore = new objects.Label(stage.canvas.width / 2, 160, scoreboard.score.toString());
         game.addChild(finalScore);
-        mainMenu = new objects.Button(stage.canvas.width / 2, 300, "menuBtn");
+        mainMenu = new objects.Button(stage.canvas.width / 2, 300, "mainmenuBtn");
         game.addChild(mainMenu);
         mainMenu.addEventListener("click", mainMenuClicked);
         mainMenu.addEventListener("rollover", menuButtonOver);
