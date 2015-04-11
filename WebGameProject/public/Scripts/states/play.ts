@@ -15,7 +15,7 @@ module states {
         player.update();
         document.onkeydown = handleKeyDown;
         for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
-            zombies[count].update();
+            zombies[count].update(player);
         }
 
         collision.update();
