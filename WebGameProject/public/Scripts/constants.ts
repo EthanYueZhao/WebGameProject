@@ -8,6 +8,7 @@
     export var LEVEL_1_STATE: number = 5;
     export var LEVEL_2_STATE: number = 6;
     export var LEVEL_3_STATE: number = 7;
+    export var LAST_STATE: number = 999;
 
     // Game Constants
     export var ZOMBIE_NUM: number = 2;

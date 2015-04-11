@@ -43,9 +43,9 @@ var collision: managers.Collision;
 var collision2: managers.Collision;
 var collisionFire: managers.Collision;
 
-var tryAgain: objects.Button;
 var playButton: objects.Button;
 var instructionButton: objects.Button;
+var mainMenu: objects.Button;
 
 var currentState: number;
 var currentStateFunction;
