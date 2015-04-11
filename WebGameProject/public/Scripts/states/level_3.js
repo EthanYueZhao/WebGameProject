@@ -5,6 +5,7 @@
 /// <reference path="../objects/background.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
+/// <reference path="../objects/heart.ts" />
 /// <reference path="../managers/collision.ts" />
 'use strict';
 var states;
@@ -21,6 +22,7 @@ var states;
         collision.update();
         collision2.update();
         scoreboard.update();
+        checkDeadline();
         if (scoreboard.lives <= 0) {
             stage.removeChild(game);
             player.destroy();
@@ -44,6 +46,10 @@ var states;
         cherry = new objects.Food(stage, game, "cherry");
         bottles = new objects.Food(stage, game, "bottles");
         player = new objects.Player(stage, game);
+        for (var i = 0; i < 3; i++) {
+            heart[i] = new objects.Heart(stage, game);
+            heart[i].reset(i);
+        }
         // Label to check level
         levelLabel = new objects.Label(stage.canvas.width - 100, 30, "LEVEL 3");
         // Show Cursor
@@ -61,5 +67,21 @@ var states;
         stage.addChild(game);
     }
     states.levelNo3 = levelNo3;
+    function checkDeadline() {
+        if (player.image.x < 50) {
+            loseLife();
+            player.image.x += 100;
+        }
+    }
+    function loseLife() {
+        createjs.Sound.play("Crash");
+        for (var pos = 0; pos < scoreboard.lives; pos++) {
+            heart[pos].destroy();
+        }
+        scoreboard.lives -= 1;
+        for (var pos = 0; pos < scoreboard.lives; pos++) {
+            heart[pos].reset(pos);
+        }
+    }
 })(states || (states = {}));
 //# sourceMappingURL=level_3.js.map

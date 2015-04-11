@@ -7,6 +7,7 @@
         { id: "BackGroundMusic", src: "assets/sounds/scavengers_music.mp3" },
         { id: "Crash", src: "assets/sounds/Crash2.wav" },
         { id: "Pickup", src: "assets/sounds/Pickup5.wav" },
+        { id: "heart", src: "assets/images/heart.png" },
         { id: "Select", src: "assets/sounds/selectSound.wav" },
         { id: "Click", src: "assets/sounds/clickSound.wav" }
 

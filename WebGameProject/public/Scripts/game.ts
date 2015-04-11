@@ -18,6 +18,7 @@
 /// <reference path="states/level_2.ts" />
 /// <reference path="states/level_3.ts" />
 /// <reference path="states/gameover.ts" />
+/// <reference path="objects/heart.ts" />
 
 // game name: Last Survivor
 // file name: game.ts
@@ -33,12 +34,14 @@ var player: objects.Player;
 var cherry: objects.Food;
 var bottles: objects.Food;
 var zombies = []; // zombies array;
+var heart = [];
 
 var scoreboard: objects.Scoreboard;
 var levelLabel: objects.Label;
 
 var collision: managers.Collision;
 var collision2: managers.Collision;
+var collisionFire: managers.Collision;
 
 var tryAgain: objects.Button;
 var playButton: objects.Button;
