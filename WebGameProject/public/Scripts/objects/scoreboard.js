@@ -12,10 +12,12 @@ var objects;
             this.update();
             this.width = this.label.getBounds().width;
             this.height = this.label.getBounds().height;
+            this.label.x = 170;
+            this.label.y = 5;
             game.addChild(this.label);
         }
         Scoreboard.prototype.update = function () {
-            this.labelText = "Lives: " + this.lives.toString() + " Score: " + this.score.toString();
+            this.labelText = " Score: " + this.score.toString();
             this.label.text = this.labelText;
         };
         Scoreboard.prototype.destroy = function () {

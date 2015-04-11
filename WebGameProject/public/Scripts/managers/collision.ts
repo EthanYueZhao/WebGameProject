@@ -2,6 +2,7 @@
 /// <reference path="../objects/food.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
+/// <reference path="../objects/heart.ts" />
 
 module managers {
     // Collision Manager Class
@@ -45,8 +46,7 @@ module managers {
             p2.x = cloud.image.x;
             p2.y = cloud.image.y;
             if (this.distance(p1, p2) < ((this.plane.height / 2) + (cloud.height / 2))) {
-                createjs.Sound.play("Crash");
-                this.scoreboard.lives -= 1;
+                this.loseLife();
                 cloud.reset();
             }
         }
@@ -72,6 +72,17 @@ module managers {
                 this.planeAndCloud(this.clouds[count]);
             }
             this.planeAndIsland();
+        }
+
+        loseLife() {
+            createjs.Sound.play("Crash");
+            for (var pos = 0; pos < scoreboard.lives; pos++) {
+                heart[pos].destroy();
+            }
+            this.scoreboard.lives -= 1;
+            for (var pos = 0; pos < scoreboard.lives; pos++) {
+                heart[pos].reset(pos);
+            }
         }
     }
 } 

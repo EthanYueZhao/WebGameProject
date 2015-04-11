@@ -5,6 +5,7 @@
 /// <reference path="../objects/background.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
+/// <reference path="../objects/heart.ts" />
 /// <reference path="../managers/collision.ts" />
 'use strict'
 module states {
@@ -47,6 +48,10 @@ module states {
         cherry = new objects.Food(stage, game, "cherry");
         bottles = new objects.Food(stage, game, "bottles");
         player = new objects.Player(stage, game);
+        for (var i = 0; i < 3; i++) {
+            heart[i] = new objects.Heart(stage, game);
+            heart[i].reset(i);
+        }
 
 
         // Label to check level
