@@ -69,16 +69,16 @@ var states;
         gameLevelLabel = new objects.Label(stage.canvas.width / 2, 70, "Select The Difficulty");
         game.addChild(gameLevelLabel);
         // Display Play Again Button
-        level_1_Button = new objects.Button(stage.canvas.width / 2, 170, "playBtn");
+        level_1_Button = new objects.Button(stage.canvas.width / 2, 170, "normalBtn");
         game.addChild(level_1_Button);
         level_1_Button.addEventListener("click", level_1_Clicked);
         level_1_Button.addEventListener("rollover", level_1_Over);
         // Display Instruction Button
-        level_2_Button = new objects.Button(stage.canvas.width / 2, 270, "playBtn");
+        level_2_Button = new objects.Button(stage.canvas.width / 2, 270, "veteranBtn");
         game.addChild(level_2_Button);
         level_2_Button.addEventListener("click", level_2_Clicked);
         level_2_Button.addEventListener("rollover", level_2_Over);
-        level_3_Button = new objects.Button(stage.canvas.width / 2, 370, "playBtn");
+        level_3_Button = new objects.Button(stage.canvas.width / 2, 370, "hellBtn");
         game.addChild(level_3_Button);
         level_3_Button.addEventListener("click", level_3_Clicked);
         level_3_Button.addEventListener("rollover", level_3_Over);
