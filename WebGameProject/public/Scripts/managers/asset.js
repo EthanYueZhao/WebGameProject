@@ -27,14 +27,20 @@ var managers;
     var buttonSheetData = {
         "images": ["assets/images/buttons.png"],
         "frames": [
-            [0, 0, 187, 75],
-            [0, 77, 187, 75],
-            [0, 153, 187, 75]
+            [2, 2, 187, 75],
+            [2, 79, 187, 75],
+            [2, 155, 187, 75],
+            [191, 2, 187, 75],
+            [191, 79, 187, 75],
+            [191, 155, 187, 75]
         ],
         "animations": {
             "playBtn": [0],
             "instructionBtn": [1],
-            "againBtn": [2]
+            "againBtn": [2],
+            "normalBtn": [3],
+            "veteranBtn": [4],
+            "hellBtn": [5]
         }
     };
     // Asset Manager Class
