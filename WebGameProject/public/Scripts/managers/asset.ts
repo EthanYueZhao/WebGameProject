@@ -5,7 +5,7 @@
         { id: "loading", src: "assets/images/loading.jpg" },
         { id: "bg2", src: "assets/images/bg2.png" },
         { id: "bg", src: "assets/images/bg.png" },
-        { id: "bgMenu", src: "assets/images/bgMenu3.png" },
+        { id: "bgMenu", src: "assets/images/bgMenu.jpg" },
         { id: "heartBreak", src: "assets/images/heartBreak.png" },
         { id: "red", src: "assets/images/red.png" },
         { id: "BackGroundMusic", src: "assets/sounds/scavengers_music.mp3" },

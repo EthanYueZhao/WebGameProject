@@ -31,6 +31,7 @@ module states {
 
         // Instantiate Game Objects
         background = new objects.Background(stage, game, "bgMenu");
+        background.image.y = -50;
         player = new objects.Player(stage, game);
 
         // Show Cursor
@@ -41,7 +42,7 @@ module states {
         game.addChild(instructionLabel);
 
        // display instruction content
-        instructionContent = new createjs.Text(" Collect food\n Beat Zombies\n Survive as long as possible\n\n Use arrow keys to move", "30px Vijaya", "#FF0000");
+        instructionContent = new createjs.Text(" Collect food\n Beat Zombies\n Survive as long as possible\n\n Use arrow keys to move", "30px Vijaya", "blue");
         instructionContent.x = stage.canvas.width / 2 -100;
         instructionContent.y = 100; 
         game.addChild(instructionContent);
