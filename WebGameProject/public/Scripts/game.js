@@ -19,6 +19,7 @@
 /// <reference path="states/level_3.ts" />
 /// <reference path="states/gameover.ts" />
 /// <reference path="objects/heart.ts" />
+/// <reference path="objects/wall.ts" />
 // game name: Last Survivor
 // file name: game.ts
 // author: Yue Zhao
@@ -30,6 +31,7 @@ var player;
 var cherry;
 var bottles;
 var zombies = []; // zombies array;
+var walls = [];
 var heart = [];
 var scoreboard;
 var levelLabel;

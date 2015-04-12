@@ -1,4 +1,5 @@
-﻿/// <reference path="../objects/button.ts" />
+﻿'use strict'
+/// <reference path="../objects/button.ts" />
 /// <reference path="../objects/zombie.ts" />
 /// <reference path="../objects/food.ts" />
 /// <reference path="../objects/label.ts" />
@@ -7,7 +8,6 @@
 /// <reference path="../objects/heart.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../managers/collision.ts" />
-'use strict'
 module states {
     export function level_1_State() {
         background.update();
@@ -17,7 +17,7 @@ module states {
         document.onkeydown = handleKeyDown;
         for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
             zombies[count].update();
-        }
+        }    
 
         collision.update();
         collision2.update();
@@ -64,6 +64,8 @@ module states {
             zombies[count] = new objects.Zombie(stage, game, "zombie" + count);
         }
 
+
+       
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
 

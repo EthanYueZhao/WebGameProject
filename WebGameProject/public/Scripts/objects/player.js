@@ -34,38 +34,97 @@ var objects;
         Player.prototype.move = function (e) {
             switch (e.keyCode) {
                 case 37:
-                    if (this.image.x <= 10) {
-                        this.image.x = 10;
-                    }
-                    else {
-                        this.image.x -= 32;
+                    if (this.isMoveable(e.keyCode)) {
+                        if (this.image.x <= 10) {
+                            this.image.x = 10;
+                        }
+                        else {
+                            this.image.x -= 32;
+                        }
                     }
                     break;
                 case 38:
-                    if (this.image.y <= 32) {
-                        this.image.y = 16;
-                    }
-                    else {
-                        this.image.y -= 32;
+                    if (this.isMoveable(e.keyCode)) {
+                        if (this.image.y <= 32) {
+                            this.image.y = 16;
+                        }
+                        else {
+                            this.image.y -= 32;
+                        }
                     }
                     break;
                 case 39:
-                    if (this.image.x >= 620) {
-                        this.image.x = 620;
-                    }
-                    else {
-                        this.image.x += 32;
+                    if (this.isMoveable(e.keyCode)) {
+                        if (this.image.x >= 620) {
+                            this.image.x = 620;
+                        }
+                        else {
+                            this.image.x += 32;
+                        }
                     }
                     break;
                 case 40:
-                    if (this.image.y >= 448) {
-                        this.image.y = 462;
-                    }
-                    else {
-                        this.image.y += 32;
+                    if (this.isMoveable(e.keyCode)) {
+                        if (this.image.y >= 448) {
+                            this.image.y = 462;
+                        }
+                        else {
+                            this.image.y += 32;
+                        }
                     }
                     break;
             }
+        };
+        Player.prototype.isMoveable = function (key) {
+            if (walls.length === 0) {
+                return true;
+            }
+            else {
+                var result;
+                switch (key) {
+                    case 37:
+                        result = !this.collisionWithWalls(this.image.x - 16, this.image.y);
+                        break;
+                    case 38:
+                        result = !this.collisionWithWalls(this.image.x, this.image.y - 16);
+                        break;
+                    case 39:
+                        result = !this.collisionWithWalls(this.image.x + 16, this.image.y);
+                        break;
+                    case 40:
+                        result = !this.collisionWithWalls(this.image.x, this.image.y + 16);
+                        break;
+                }
+                return result;
+            }
+        };
+        Player.prototype.collisionWithWalls = function (x, y) {
+            var result;
+            for (var i = 0, j = walls.length; i < j; i++) {
+                var p1 = new createjs.Point();
+                var p2 = new createjs.Point();
+                p1.x = x;
+                p1.y = y;
+                p2.x = walls[i].image.x;
+                p2.y = walls[i].image.y;
+                if (this.distance(p1, p2) < ((this.height / 2) + (walls[i].height / 2))) {
+                    result = true;
+                    break;
+                }
+            }
+            return result;
+        };
+        // Utility method - Distance calculation between two points
+        Player.prototype.distance = function (p1, p2) {
+            var result = 0;
+            var xPoints = 0;
+            var yPoints = 0;
+            xPoints = p2.x - p1.x;
+            xPoints = xPoints * xPoints;
+            yPoints = p2.y - p1.y;
+            yPoints = yPoints * yPoints;
+            result = Math.sqrt(xPoints + yPoints);
+            return result;
         };
         return Player;
     })();

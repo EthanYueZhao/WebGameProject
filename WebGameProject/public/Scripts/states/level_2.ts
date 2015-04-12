@@ -5,6 +5,7 @@
 /// <reference path="../objects/background.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
+/// <reference path="../objects/wall.ts" />
 /// <reference path="../objects/heart.ts" />
 /// <reference path="../managers/collision.ts" />
 'use strict'
@@ -17,6 +18,9 @@ module states {
         document.onkeydown = handleKeyDown;
         for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
             zombies[count].update();
+        }
+        for (var i = 0; i < constants.WALLS_NUM; i++) {
+            walls[i].update();
         }
 
         collision.update();
@@ -45,6 +49,10 @@ module states {
 
         // Instantiate Game Objects
         background = new objects.Background(stage, game);
+        // Create walls
+        for (var i = 0; i < constants.WALLS_NUM; i++) {
+            walls[i] = new objects.Wall(stage, game);
+        }
         cherry = new objects.Food(stage, game, "cherry");
         bottles = new objects.Food(stage, game, "bottles");
         player = new objects.Player(stage, game);

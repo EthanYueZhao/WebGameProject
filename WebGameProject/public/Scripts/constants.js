@@ -16,5 +16,6 @@ var constants;
     constants.LABEL_COLOUR = "#FF0000";
     constants.PLANE_LIVES = 3;
     constants.BACKGROUND_STEP = 1;
+    constants.WALLS_NUM = 16;
 })(constants || (constants = {}));
 //# sourceMappingURL=constants.js.map

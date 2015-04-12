@@ -8,14 +8,14 @@ module managers {
     // Collision Manager Class
     export class Collision {
         // class variables
-        private plane: objects.Player;
-        private island: objects.Food;
+        private player: objects.Player;
+        private food: objects.Food;
         private clouds = [];
         private scoreboard: objects.Scoreboard;
 
-        constructor(plane: objects.Player, island: objects.Food, clouds, scoreboard: objects.Scoreboard) {
-            this.plane = plane;
-            this.island = island;
+        constructor(player: objects.Player, food: objects.Food, clouds, scoreboard: objects.Scoreboard) {
+            this.player = player;
+            this.food = food;
             this.clouds = clouds;
             this.scoreboard = scoreboard;
         }
@@ -38,40 +38,40 @@ module managers {
         }
 
         // check collision between plane and any cloud object
-        private planeAndCloud(cloud: objects.Zombie) {
+        private playerAndZumbie(zombie: objects.Zombie) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = cloud.image.x;
-            p2.y = cloud.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (cloud.height / 2))) {
+            p1.x = this.player.image.x;
+            p1.y = this.player.image.y;
+            p2.x = zombie.image.x;
+            p2.y = zombie.image.y;
+            if (this.distance(p1, p2) < ((this.player.height / 2) + (zombie.height / 2))) {
                 this.loseLife();
-                cloud.reset();
+                zombie.reset();
             }
         }
 
         // check collision between plane and island
-        private planeAndIsland() {
+        private playerAndFood() {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = this.island.image.x;
-            p2.y = this.island.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (this.island.height / 2))) {
+            p1.x = this.player.image.x;
+            p1.y = this.player.image.y;
+            p2.x = this.food.image.x;
+            p2.y = this.food.image.y;
+            if (this.distance(p1, p2) < ((this.player.height / 2) + (this.food.height / 2))) {
                 createjs.Sound.play("Pickup");
                 this.scoreboard.score += 100;
-                this.island.reset();
+                this.food.reset();
             }
         }
 
         // Utility Function to Check Collisions
         update() {
             for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
-                this.planeAndCloud(this.clouds[count]);
+                this.playerAndZumbie(this.clouds[count]);
             }
-            this.planeAndIsland();
+            this.playerAndFood();
         }
 
         loseLife() {
