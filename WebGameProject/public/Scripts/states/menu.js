@@ -9,6 +9,7 @@
 var states;
 (function (states) {
     'use strict';
+    var xBG;
     function playButtonClicked(event) {
         stage.removeChild(game);
         player.destroy();
@@ -29,8 +30,7 @@ var states;
     }
     states.instructionButtonOver = instructionButtonOver;
     function menuState() {
-        background.update();
-        //player.update();
+        background.goAround();
     }
     states.menuState = menuState;
     function menu() {
@@ -38,7 +38,7 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        background = new objects.Background(stage, game, "bg2");
+        background = new objects.Background(stage, game, "bgMenu");
         player = new objects.Player(stage, game);
         // Show Cursor
         stage.cursor = "default";

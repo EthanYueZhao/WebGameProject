@@ -10,7 +10,9 @@ var states;
 (function (states) {
     'use strict';
     function gameOverState() {
-        background.update();
+        background.goAround();
+        heartBreak.update();
+        red.disappear();
     }
     states.gameOverState = gameOverState;
     // Restart Game when Try Again Button is clicked
@@ -35,7 +37,7 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        background = new objects.Background(stage, game, "bg2");
+        background = new objects.Background(stage, game, "bgMenu");
         player = new objects.Player(stage, game);
         // Show Cursor
         stage.cursor = "default";
@@ -54,6 +56,10 @@ var states;
         mainMenu.addEventListener("rollover", menuButtonOver);
         player.image.x = stage.canvas.width / 2 - mainMenu.regX - player.width;
         player.image.y = mainMenu.y;
+        red = new objects.Background(stage, game, "red");
+        heartBreak = new objects.HeartBreak(stage, game);
+        heartBreak.resetAlpha();
+        red.resetAlpha();
         stage.addChild(game);
     }
     states.gameOver = gameOver;

@@ -18,5 +18,6 @@ var constants;
     constants.BACKGROUND_STEP = 0.5;
     constants.WALLS_NUM = 16;
     constants.PLAYER_STEP = 16;
+    constants.DISAPPEAR = 0.01;
 })(constants || (constants = {}));
 //# sourceMappingURL=constants.js.map

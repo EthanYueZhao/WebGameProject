@@ -12,6 +12,8 @@ var objects;
             this.height = this.image.getBounds().height;
             this.reset();
             this.dx = constants.BACKGROUND_STEP;
+            this.xBG = constants.BACKGROUND_STEP;
+            this.disX = constants.DISAPPEAR;
             game.addChild(this.image);
         }
         Background.prototype.update = function () {
@@ -31,6 +33,26 @@ var objects;
         };
         Background.prototype.destroy = function () {
             game.removeChild(this.image);
+        };
+        Background.prototype.goAround = function () {
+            this.image.x -= this.xBG;
+            this.checkBG();
+        };
+        Background.prototype.checkBG = function () {
+            if (this.image.x < -(this.width - 640)) {
+                this.xBG = -constants.BACKGROUND_STEP;
+            }
+            if (this.image.x > 0) {
+                this.xBG = constants.BACKGROUND_STEP;
+            }
+        };
+        Background.prototype.disappear = function () {
+            if (this.image.alpha > 0) {
+                this.image.alpha -= this.disX;
+            }
+        };
+        Background.prototype.resetAlpha = function () {
+            this.image.alpha = 0.5;
         };
         return Background;
     })();

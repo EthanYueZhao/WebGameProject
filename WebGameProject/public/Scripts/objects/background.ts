@@ -9,6 +9,8 @@ module objects {
         width: number;
         height: number;
         dx: number;
+        disX: number;
+        xBG: number;
         constructor(stage: createjs.Stage, game: createjs.Container, image: String) {
             this.stage = stage;
             this.game = game;
@@ -18,6 +20,8 @@ module objects {
             this.reset();
 
             this.dx = constants.BACKGROUND_STEP;
+            this.xBG = constants.BACKGROUND_STEP;
+            this.disX = constants.DISAPPEAR;
 
             game.addChild(this.image);
         }
@@ -43,6 +47,30 @@ module objects {
 
         destroy() {
             game.removeChild(this.image);
+        }
+
+        goAround() {
+            this.image.x -= this.xBG;
+            this.checkBG();
+        }
+
+        checkBG() {
+            if (this.image.x < -(this.width - 640)) {
+                this.xBG = -constants.BACKGROUND_STEP;
+            }
+            if (this.image.x > 0) {
+                this.xBG = constants.BACKGROUND_STEP;
+            }
+        }
+
+        disappear() {
+            if (this.image.alpha > 0) {
+                this.image.alpha -= this.disX;
+            }
+        }
+
+        resetAlpha() {
+            this.image.alpha = 0.5;
         }
     }
 

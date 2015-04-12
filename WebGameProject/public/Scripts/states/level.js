@@ -52,7 +52,7 @@ var states;
     }
     states.level_3_Over = level_3_Over;
     function levelState() {
-        //ocean.update();
+        background.goAround();
         //player.update();
     }
     states.levelState = levelState;
@@ -61,7 +61,7 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        background = new objects.Background(stage, game, "bg2");
+        background = new objects.Background(stage, game, "bgMenu");
         player = new objects.Player(stage, game);
         // Show Cursor
         stage.cursor = "default";

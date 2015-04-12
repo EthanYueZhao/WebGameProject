@@ -19,6 +19,7 @@
 /// <reference path="states/level_3.ts" />
 /// <reference path="states/gameover.ts" />
 /// <reference path="objects/heart.ts" />
+/// <reference path="objects/heartBreak.ts" />
 /// <reference path="objects/wall.ts" />
 // game name: Last Survivor
 // file name: game.ts
@@ -29,6 +30,8 @@ var game;
 var background;
 var background3;
 var player;
+var heartBreak;
+var red;
 var cherry;
 var bottles;
 var zombies = []; // zombies array;
@@ -92,7 +95,7 @@ function changeState(state) {
             states.gameOver();
             break;
         case constants.LEVEL_SELECT_STATE:
-            currentStateFunction = states.gameOverState;
+            currentStateFunction = states.levelState;
             // instantiate level select screen
             states.levelSelect();
             break;

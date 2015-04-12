@@ -2,6 +2,7 @@
 /// <reference path="../objects/food.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
+/// <reference path="../objects/heartBreak.ts" />
 /// <reference path="../objects/heart.ts" />
 
 module managers {
@@ -89,6 +90,8 @@ module managers {
             for (var pos = 0; pos < scoreboard.lives; pos++) {
                 heart[pos].reset(pos);
             }
+            heartBreak.resetAlpha();
+            red.resetAlpha();
         }
     }
 } 
