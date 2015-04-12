@@ -28,6 +28,7 @@ var states;
         collision.update();
         collision2.update();
         scoreboard.update();
+        player.checkFight();
         if (scoreboard.lives <= 0) {
             stage.removeChild(game);
             player.destroy();

@@ -29,6 +29,7 @@ var states;
         collision.update();
         collision2.update();
         scoreboard.update();
+        player.checkFight();
         checkDeadline();
         if (scoreboard.lives <= 0) {
             stage.removeChild(game);
@@ -67,6 +68,10 @@ var states;
         firewall.x = 0;
         firewall.y = 0;
         game.addChild(firewall);
+        for (var i = 0; i < 3; i++) {
+            heart[i] = new objects.Heart(stage, game);
+            heart[i].reset(i);
+        }
         // Label to check level
         levelLabel = new objects.Label(stage.canvas.width - 100, 30, "LEVEL 3");
         // Show Cursor

@@ -9,6 +9,8 @@ module objects {
         engineSound: createjs.SoundInstance;
         width: number;
         height: number;
+        fightAble: boolean;
+        countTime: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
@@ -19,6 +21,8 @@ module objects {
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
+            this.fightAble = false;
+            this.countTime = 0;
             game.addChild(this.image);
             //this.engineSound = createjs.Sound.play('BackGroundMusic', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
@@ -32,10 +36,25 @@ module objects {
             } else {
                 this.image.x -= constants.BACKGROUND_STEP;
             }
+            if (this.countTime == 0) {
+                scoreboard.label.color = "white";
+            }
+            else {
+                this.countTime--;
+            }
         }
         destroy() {
             //this.engineSound.stop();
             game.removeChild(this.image);
+        }
+
+        checkFight() {
+            if (scoreboard.score <= 0) {
+                this.fightAble = false;
+            }
+            else {
+                this.fightAble = true;
+            }
         }
         move(e) {
             switch (e.keyCode) {
@@ -76,7 +95,14 @@ module objects {
                     }
                     break;
                 case 32:
-                    this.image.gotoAndPlay("fight");
+                    if (this.fightAble) {
+                        this.image.gotoAndPlay("fight");
+                        scoreboard.score -= 20;
+                    }
+                    else {
+                        scoreboard.label.color = "red";
+                        this.countTime = 5;
+                    }
                     break;
             }
         }
