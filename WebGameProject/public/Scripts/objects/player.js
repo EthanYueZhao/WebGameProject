@@ -14,6 +14,8 @@ var objects;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
+            this.fightAble = false;
+            this.countTime = 0;
             game.addChild(this.image);
             //this.engineSound = createjs.Sound.play('BackGroundMusic', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
@@ -26,10 +28,24 @@ var objects;
             else {
                 this.image.x -= constants.BACKGROUND_STEP;
             }
+            if (this.countTime == 0) {
+                scoreboard.label.color = "white";
+            }
+            else {
+                this.countTime--;
+            }
         };
         Player.prototype.destroy = function () {
             //this.engineSound.stop();
             game.removeChild(this.image);
+        };
+        Player.prototype.checkFight = function () {
+            if (scoreboard.score <= 0) {
+                this.fightAble = false;
+            }
+            else {
+                this.fightAble = true;
+            }
         };
         Player.prototype.move = function (e) {
             switch (e.keyCode) {
@@ -74,7 +90,14 @@ var objects;
                     }
                     break;
                 case 32:
-                    this.image.gotoAndPlay("fight");
+                    if (this.fightAble) {
+                        this.image.gotoAndPlay("fight");
+                        scoreboard.score -= 20;
+                    }
+                    else {
+                        scoreboard.label.color = "red";
+                        this.countTime = 5;
+                    }
                     break;
             }
         };

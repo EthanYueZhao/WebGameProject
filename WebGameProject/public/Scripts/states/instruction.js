@@ -35,15 +35,15 @@ var states;
         // Show Cursor
         stage.cursor = "default";
         // Display Instrucion title
-        instructionLabel = new objects.Label(stage.canvas.width / 2, 40, "Instruction");
+        instructionLabel = new objects.Label(stage.canvas.width / 2, 50, "Instruction");
         game.addChild(instructionLabel);
         // display instruction content
-        instructionContent = new createjs.Text(" Collect food\n Beat Zombies\n Survive as long as possible\n\n Use arrow keys to move", "30px Vijaya", "blue");
+        instructionContent = new createjs.Text(" Collect food\n Beat Zombies\n Survive as long as possible\n\n Use arrow keys to move\n Use space key to fight\n Each fight costs 20 scores", "30px Vijaya", "blue");
         instructionContent.x = stage.canvas.width / 2 - 100;
         instructionContent.y = 100;
         game.addChild(instructionContent);
         // Display Try Play Button
-        playButton = new objects.Button(stage.canvas.width / 2, 300, "playBtn");
+        playButton = new objects.Button(stage.canvas.width / 2, 350, "playBtn");
         game.addChild(playButton);
         playButton.addEventListener("click", states.playButtonClicked);
         player.image.x = stage.canvas.width / 2 - playButton.regX - player.width;
