@@ -76,7 +76,6 @@ var objects;
             }
         };
         Player.prototype.isMoveable = function (key) {
-            console.log(walls.length);
             if (walls.length === 0) {
                 return true;
             }

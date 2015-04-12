@@ -78,8 +78,7 @@ module objects {
             }
         }
 
-        private isMoveable(key: number) {
-            console.log(walls.length);
+        private isMoveable(key: number) {           
             if (walls.length === 0) {
                 return true;
             } else {
