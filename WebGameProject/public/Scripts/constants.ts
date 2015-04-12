@@ -13,7 +13,7 @@
     // Game Constants
     export var ZOMBIE_NUM: number = 2;
     export var LABEL_FONT = "50px Vijaya";
-    export var LABEL_COLOUR = "#FF0000";
+    export var LABEL_COLOUR = "white";
     export var PLANE_LIVES = 3;
     export var BACKGROUND_STEP: number = 0.5;
     export var WALLS_NUM: number = 16;

@@ -39,7 +39,8 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        background = new objects.Background(stage, game,"bgMenu");
+        background = new objects.Background(stage, game, "bgMenu");
+        background.image.y = -50;
         player = new objects.Player(stage, game);
 
         // Show Cursor

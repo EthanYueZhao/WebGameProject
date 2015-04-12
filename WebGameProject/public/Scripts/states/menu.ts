@@ -41,6 +41,7 @@ module states {
 
         // Instantiate Game Objects
         background = new objects.Background(stage, game, "bgMenu");
+        background.image.y = -50;
         player = new objects.Player(stage, game);
 
         // Show Cursor

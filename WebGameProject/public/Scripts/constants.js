@@ -13,7 +13,7 @@ var constants;
     // Game Constants
     constants.ZOMBIE_NUM = 2;
     constants.LABEL_FONT = "50px Vijaya";
-    constants.LABEL_COLOUR = "#FF0000";
+    constants.LABEL_COLOUR = "white";
     constants.PLANE_LIVES = 3;
     constants.BACKGROUND_STEP = 0.5;
     constants.WALLS_NUM = 16;
