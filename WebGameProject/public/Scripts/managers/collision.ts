@@ -38,21 +38,21 @@ module managers {
         }
 
         // check collision between plane and any cloud object
-        private planeAndCloud(cloud: objects.Zombie) {
+        private playerAndZumbie(zombie: objects.Zombie) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
             p1.x = this.player.image.x;
             p1.y = this.player.image.y;
-            p2.x = cloud.image.x;
-            p2.y = cloud.image.y;
-            if (this.distance(p1, p2) < ((this.player.height / 2) + (cloud.height / 2))) {
+            p2.x = zombie.image.x;
+            p2.y = zombie.image.y;
+            if (this.distance(p1, p2) < ((this.player.height / 2) + (zombie.height / 2))) {
                 this.loseLife();
-                cloud.reset();
+                zombie.reset();
             }
         }
 
         // check collision between plane and island
-        private planeAndIsland() {
+        private playerAndFood() {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
             p1.x = this.player.image.x;
@@ -69,9 +69,9 @@ module managers {
         // Utility Function to Check Collisions
         update() {
             for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
-                this.planeAndCloud(this.clouds[count]);
+                this.playerAndZumbie(this.clouds[count]);
             }
-            this.planeAndIsland();
+            this.playerAndFood();
         }
 
         loseLife() {

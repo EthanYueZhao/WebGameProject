@@ -27,20 +27,20 @@ var managers;
             return result;
         };
         // check collision between plane and any cloud object
-        Collision.prototype.planeAndCloud = function (cloud) {
+        Collision.prototype.playerAndZumbie = function (zombie) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
             p1.x = this.player.image.x;
             p1.y = this.player.image.y;
-            p2.x = cloud.image.x;
-            p2.y = cloud.image.y;
-            if (this.distance(p1, p2) < ((this.player.height / 2) + (cloud.height / 2))) {
+            p2.x = zombie.image.x;
+            p2.y = zombie.image.y;
+            if (this.distance(p1, p2) < ((this.player.height / 2) + (zombie.height / 2))) {
                 this.loseLife();
-                cloud.reset();
+                zombie.reset();
             }
         };
         // check collision between plane and island
-        Collision.prototype.planeAndIsland = function () {
+        Collision.prototype.playerAndFood = function () {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
             p1.x = this.player.image.x;
@@ -56,9 +56,9 @@ var managers;
         // Utility Function to Check Collisions
         Collision.prototype.update = function () {
             for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
-                this.planeAndCloud(this.clouds[count]);
+                this.playerAndZumbie(this.clouds[count]);
             }
-            this.planeAndIsland();
+            this.playerAndFood();
         };
         Collision.prototype.loseLife = function () {
             createjs.Sound.play("Crash");
