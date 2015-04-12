@@ -10,7 +10,9 @@
 'use strict'
 module states {
     export function level_3_State() {
-        background.update();
+        background.updateOnly();
+        background3.updateOnly();
+        checkBG();
         cherry.update();
         bottles.update();
         player.update();
@@ -47,7 +49,10 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        background = new objects.Background(stage, game);
+        background = new objects.Background(stage, game, "bg");
+        background3 = new objects.Background(stage, game, "bg");
+        background.image.x = 0;
+        background3.image.x = background.width;
         cherry = new objects.Food(stage, game, "cherry");
         bottles = new objects.Food(stage, game, "bottles");
         player = new objects.Player(stage, game);
@@ -98,5 +103,14 @@ module states {
         }
     }
 
-
+    function checkBG() {
+        if (background.image.x < -background.width) {
+            background.resetOnly();
+            console.log("1 reset");
+        }
+        if (background3.image.x < -background3.width) {
+            background3.resetOnly();
+            console.log("2 reset");
+        }
+    }
 }

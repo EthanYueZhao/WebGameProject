@@ -11,7 +11,9 @@
 var states;
 (function (states) {
     function level_3_State() {
-        background.update();
+        background.updateOnly();
+        background3.updateOnly();
+        checkBG();
         cherry.update();
         bottles.update();
         player.update();
@@ -42,7 +44,10 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        background = new objects.Background(stage, game);
+        background = new objects.Background(stage, game, "bg");
+        background3 = new objects.Background(stage, game, "bg");
+        background.image.x = 0;
+        background3.image.x = background.width;
         cherry = new objects.Food(stage, game, "cherry");
         bottles = new objects.Food(stage, game, "bottles");
         player = new objects.Player(stage, game);
@@ -81,6 +86,16 @@ var states;
         scoreboard.lives -= 1;
         for (var pos = 0; pos < scoreboard.lives; pos++) {
             heart[pos].reset(pos);
+        }
+    }
+    function checkBG() {
+        if (background.image.x < -background.width) {
+            background.resetOnly();
+            console.log("1 reset");
+        }
+        if (background3.image.x < -background3.width) {
+            background3.resetOnly();
+            console.log("2 reset");
         }
     }
 })(states || (states = {}));

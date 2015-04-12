@@ -31,6 +31,7 @@ var stage: createjs.Stage;
 var game: createjs.Container;
 
 var background: objects.Background;
+var background3: objects.Background;
 var player: objects.Player;
 var cherry: objects.Food;
 var bottles: objects.Food;

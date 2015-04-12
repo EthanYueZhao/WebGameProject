@@ -44,7 +44,7 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        background = new objects.Background(stage, game);
+        background = new objects.Background(stage, game, "bg2");
         cherry = new objects.Food(stage, game, "cherry");
         bottles = new objects.Food(stage, game, "bottles");
         player = new objects.Player(stage, game);

@@ -45,7 +45,7 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        background = new objects.Background(stage, game);
+        background = new objects.Background(stage, game, "bg2");
         for (var i = 0; i < constants.WALLS_NUM; i++) {
             walls[i] = new objects.Wall(stage, game);
         }

@@ -9,10 +9,10 @@ module objects {
         width: number;
         height: number;
         dx: number;
-        constructor(stage: createjs.Stage, game: createjs.Container) {
+        constructor(stage: createjs.Stage, game: createjs.Container, image: String) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("bg"));
+            this.image = new createjs.Bitmap(managers.Assets.loader.getResult(image));
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.reset();
@@ -27,6 +27,14 @@ module objects {
             if (this.image.x <= -640) {
                 this.reset();
             }
+        }
+
+        updateOnly() {
+            this.image.x -= this.dx;
+        }
+
+        resetOnly() {
+            this.image.x = this.width - 20;
         }
 
         reset() {
