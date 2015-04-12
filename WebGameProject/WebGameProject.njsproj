@@ -76,6 +76,7 @@
     <Content Include="public\assets\images\bgMenu2.jpg" />
     <Content Include="public\assets\images\bgMenu3.png" />
     <Content Include="public\assets\images\buttons.png" />
+    <Content Include="public\assets\images\fw1.png" />
     <Content Include="public\assets\images\heart.png" />
     <Content Include="public\assets\images\heartBreak.png" />
     <Content Include="public\assets\images\loading.jpg" />

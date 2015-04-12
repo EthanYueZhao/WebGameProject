@@ -63,6 +63,10 @@ var states;
             heart[i] = new objects.Heart(stage, game);
             heart[i].reset(i);
         }
+        var firewall = new createjs.Sprite(managers.Assets.fwSheet, "firewall");
+        firewall.x = 0;
+        firewall.y = 0;
+        game.addChild(firewall);
         // Label to check level
         levelLabel = new objects.Label(stage.canvas.width - 100, 30, "LEVEL 3");
         // Show Cursor

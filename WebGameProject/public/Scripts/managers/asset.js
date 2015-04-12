@@ -6,7 +6,7 @@ var managers;
         { id: "loading", src: "assets/images/loading.jpg" },
         { id: "bg2", src: "assets/images/bg2.png" },
         { id: "bg", src: "assets/images/bg.png" },
-        { id: "bgMenu", src: "assets/images/bgMenu3.png" },
+        { id: "bgMenu", src: "assets/images/bgMenu.jpg" },
         { id: "heartBreak", src: "assets/images/heartBreak.png" },
         { id: "red", src: "assets/images/red.png" },
         { id: "BackGroundMusic", src: "assets/sounds/scavengers_music.mp3" },
@@ -59,6 +59,14 @@ var managers;
             "mainmenuBtn": [6]
         }
     };
+    // firewall sprite data
+    var fwSheetData = {
+        "images": ["assets/images/fw1.png"],
+        "frames": { width: 50, height: 480, count: 8, regX: 0, regY: 0 },
+        "animations": {
+            "firewall": { frames: [0, 1, 2, 3, 4, 5, 6, 7], speed: 0.2 }
+        }
+    };
     // Asset Manager Class
     var Assets = (function () {
         function Assets() {
@@ -70,6 +78,7 @@ var managers;
             this.loader.loadManifest(assetManifest);
             this.atlas = new createjs.SpriteSheet(spriteSheetData);
             this.buttons = new createjs.SpriteSheet(buttonSheetData);
+            this.fwSheet = new createjs.SpriteSheet(fwSheetData);
         };
         return Assets;
     })();
