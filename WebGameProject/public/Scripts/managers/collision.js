@@ -7,10 +7,10 @@ var managers;
 (function (managers) {
     // Collision Manager Class
     var Collision = (function () {
-        function Collision(plane, island, clouds, scoreboard) {
+        function Collision(player, food, clouds, scoreboard) {
             this.clouds = [];
-            this.plane = plane;
-            this.island = island;
+            this.player = player;
+            this.food = food;
             this.clouds = clouds;
             this.scoreboard = scoreboard;
         }
@@ -30,11 +30,11 @@ var managers;
         Collision.prototype.planeAndCloud = function (cloud) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
+            p1.x = this.player.image.x;
+            p1.y = this.player.image.y;
             p2.x = cloud.image.x;
             p2.y = cloud.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (cloud.height / 2))) {
+            if (this.distance(p1, p2) < ((this.player.height / 2) + (cloud.height / 2))) {
                 this.loseLife();
                 cloud.reset();
             }
@@ -43,14 +43,14 @@ var managers;
         Collision.prototype.planeAndIsland = function () {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = this.island.image.x;
-            p2.y = this.island.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (this.island.height / 2))) {
+            p1.x = this.player.image.x;
+            p1.y = this.player.image.y;
+            p2.x = this.food.image.x;
+            p2.y = this.food.image.y;
+            if (this.distance(p1, p2) < ((this.player.height / 2) + (this.food.height / 2))) {
                 createjs.Sound.play("Pickup");
                 this.scoreboard.score += 100;
-                this.island.reset();
+                this.food.reset();
             }
         };
         // Utility Function to Check Collisions

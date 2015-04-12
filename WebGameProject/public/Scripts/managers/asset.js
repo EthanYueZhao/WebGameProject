@@ -22,6 +22,14 @@ var managers;
             "bottles": [18],
             "cherry": [19],
             "player": [0, 5],
+            "w1": [24],
+            "w2": [25],
+            "w3": [26],
+            "w4": [27],
+            "w5": [28],
+            "w6": [29],
+            "w7": [30],
+            "w8": [31]
         }
     };
     // buttons sprite data

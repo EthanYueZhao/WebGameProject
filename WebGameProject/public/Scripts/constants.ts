@@ -16,4 +16,5 @@
     export var LABEL_COLOUR = "#FF0000";
     export var PLANE_LIVES = 3;
     export var BACKGROUND_STEP: number = 1;
+    export var WALLS_NUM: number = 16;
 }

@@ -144,6 +144,7 @@
     <TypeScriptCompile Include="public\Scripts\objects\label.ts" />
     <TypeScriptCompile Include="public\Scripts\objects\player.ts" />
     <TypeScriptCompile Include="public\Scripts\objects\scoreboard.ts" />
+    <TypeScriptCompile Include="public\Scripts\objects\wall.ts" />
     <TypeScriptCompile Include="public\Scripts\objects\zombie.ts" />
     <TypeScriptCompile Include="public\Scripts\states\gameover.ts" />
     <TypeScriptCompile Include="public\Scripts\states\instruction.ts" />
