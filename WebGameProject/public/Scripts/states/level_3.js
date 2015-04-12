@@ -21,6 +21,9 @@ var states;
         for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
             zombies[count].update();
         }
+        for (var i = 0; i < constants.WALLS_NUM; i++) {
+            walls[i].update();
+        }
         collision.update();
         collision2.update();
         scoreboard.update();
@@ -48,6 +51,9 @@ var states;
         background3 = new objects.Background(stage, game, "bg");
         background.image.x = 0;
         background3.image.x = background.width;
+        for (var i = 0; i < constants.WALLS_NUM; i++) {
+            walls[i] = new objects.Wall(stage, game);
+        }
         cherry = new objects.Food(stage, game, "cherry");
         bottles = new objects.Food(stage, game, "bottles");
         player = new objects.Player(stage, game);
