@@ -24,7 +24,7 @@ var objects;
                 this.image.x = 10;
             }
             else {
-                this.image.x -= 1;
+                this.image.x -= constants.BACKGROUND_STEP;
             }
         };
         Player.prototype.destroy = function () {
@@ -39,7 +39,7 @@ var objects;
                             this.image.x = 10;
                         }
                         else {
-                            this.image.x -= 32;
+                            this.image.x -= constants.PLAYER_STEP;
                         }
                     }
                     break;
@@ -49,7 +49,7 @@ var objects;
                             this.image.y = 16;
                         }
                         else {
-                            this.image.y -= 32;
+                            this.image.y -= constants.PLAYER_STEP;
                         }
                     }
                     break;
@@ -59,7 +59,7 @@ var objects;
                             this.image.x = 620;
                         }
                         else {
-                            this.image.x += 32;
+                            this.image.x += constants.PLAYER_STEP;
                         }
                     }
                     break;
@@ -69,9 +69,12 @@ var objects;
                             this.image.y = 462;
                         }
                         else {
-                            this.image.y += 32;
+                            this.image.y += constants.PLAYER_STEP;
                         }
                     }
+                    break;
+                case 32:
+                    this.image.gotoAndPlay("fight");
                     break;
             }
         };

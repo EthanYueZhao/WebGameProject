@@ -12,7 +12,7 @@ var objects;
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
             this.reset();
-            this.dx = 1;
+            this.dx = constants.BACKGROUND_STEP;
             game.addChild(this.image);
         }
         Wall.prototype.update = function () {

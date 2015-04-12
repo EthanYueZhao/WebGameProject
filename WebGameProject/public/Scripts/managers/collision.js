@@ -35,7 +35,12 @@ var managers;
             p2.x = zombie.image.x;
             p2.y = zombie.image.y;
             if (this.distance(p1, p2) < ((this.player.height / 2) + (zombie.height / 2))) {
-                this.loseLife();
+                if (this.player.image.currentAnimation === "fight") {
+                    this.scoreboard.score += 500;
+                }
+                else {
+                    this.loseLife();
+                }
                 zombie.reset();
             }
         };

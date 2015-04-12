@@ -29,7 +29,8 @@ var managers;
             "w5": [28],
             "w6": [29],
             "w7": [30],
-            "w8": [31]
+            "w8": [31],
+            "fight": { frames: [40, 41], next: "player", speed: 0.2 }
         }
     };
     // buttons sprite data
