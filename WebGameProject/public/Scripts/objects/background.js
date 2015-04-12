@@ -4,10 +4,10 @@ var objects;
 (function (objects) {
     // Background Class
     var Background = (function () {
-        function Background(stage, game) {
+        function Background(stage, game, image) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("bg"));
+            this.image = new createjs.Bitmap(managers.Assets.loader.getResult(image));
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.reset();
@@ -19,6 +19,12 @@ var objects;
             if (this.image.x <= -640) {
                 this.reset();
             }
+        };
+        Background.prototype.updateOnly = function () {
+            this.image.x -= this.dx;
+        };
+        Background.prototype.resetOnly = function () {
+            this.image.x = this.width - 20;
         };
         Background.prototype.reset = function () {
             this.image.x = 0;

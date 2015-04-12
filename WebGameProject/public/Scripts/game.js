@@ -27,6 +27,7 @@
 var stage;
 var game;
 var background;
+var background3;
 var player;
 var cherry;
 var bottles;
