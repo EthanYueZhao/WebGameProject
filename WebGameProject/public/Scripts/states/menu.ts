@@ -8,6 +8,8 @@
 /// <reference path="../objects/label.ts" />
 module states {
     'use strict'
+    var xBG;
+
     export function playButtonClicked(event: MouseEvent) {
         stage.removeChild(game);
         player.destroy();
@@ -28,8 +30,7 @@ module states {
     }
 
     export function menuState() {
-        background.update();
-        //player.update();
+        background.goAround();
     }
 
     export function menu() {
@@ -39,7 +40,7 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        background = new objects.Background(stage, game, "bg2");
+        background = new objects.Background(stage, game, "bgMenu");
         player = new objects.Player(stage, game);
 
         // Show Cursor

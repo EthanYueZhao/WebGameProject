@@ -112,7 +112,7 @@ function changeState(state: number): void {
             break;
 
         case constants.LEVEL_SELECT_STATE:
-            currentStateFunction = states.gameOverState;
+            currentStateFunction = states.levelState;
             // instantiate level select screen
             states.levelSelect();
             break;

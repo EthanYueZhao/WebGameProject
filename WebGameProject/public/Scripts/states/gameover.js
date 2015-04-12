@@ -10,7 +10,7 @@ var states;
 (function (states) {
     'use strict';
     function gameOverState() {
-        background.update();
+        background.goAround();
     }
     states.gameOverState = gameOverState;
     // Restart Game when Try Again Button is clicked
@@ -35,7 +35,7 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        background = new objects.Background(stage, game, "bg2");
+        background = new objects.Background(stage, game, "bgMenu");
         player = new objects.Player(stage, game);
         // Show Cursor
         stage.cursor = "default";

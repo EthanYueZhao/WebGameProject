@@ -51,7 +51,7 @@ module states {
     }
 
     export function levelState() {
-        //ocean.update();
+        background.goAround();
         //player.update();
     }
 
@@ -62,7 +62,7 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        background = new objects.Background(stage, game, "bg2");
+        background = new objects.Background(stage, game, "bgMenu");
         player = new objects.Player(stage, game);
 
         // Show Cursor

@@ -5,6 +5,7 @@
         { id: "loading", src: "assets/images/loading.jpg" },
         { id: "bg2", src: "assets/images/bg2.png" },
         { id: "bg", src: "assets/images/bg.png" },
+        { id: "bgMenu", src: "assets/images/bgMenu3.png" },
         { id: "BackGroundMusic", src: "assets/sounds/scavengers_music.mp3" },
         { id: "Crash", src: "assets/sounds/Crash2.wav" },
         { id: "Pickup", src: "assets/sounds/Pickup5.wav" },

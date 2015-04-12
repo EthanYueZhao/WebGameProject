@@ -9,7 +9,7 @@
 module states {
     'use strict'
     export function gameOverState() {
-        background.update();
+        background.goAround();
     }
 
     // Restart Game when Try Again Button is clicked
@@ -37,7 +37,7 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        background = new objects.Background(stage, game,"bg2");
+        background = new objects.Background(stage, game,"bgMenu");
         player = new objects.Player(stage, game);
 
         // Show Cursor

@@ -10,7 +10,7 @@ var states;
 (function (states) {
     'use strict';
     function instructionState() {
-        background.update();
+        background.goAround();
     }
     states.instructionState = instructionState;
     // show instruction when Instruction Button is clicked
@@ -29,7 +29,7 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        background = new objects.Background(stage, game, "bg2");
+        background = new objects.Background(stage, game, "bgMenu");
         player = new objects.Player(stage, game);
         // Show Cursor
         stage.cursor = "default";
