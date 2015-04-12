@@ -11,6 +11,8 @@ var states;
     'use strict';
     function gameOverState() {
         background.goAround();
+        heartBreak.update();
+        red.disappear();
     }
     states.gameOverState = gameOverState;
     // Restart Game when Try Again Button is clicked
@@ -54,6 +56,10 @@ var states;
         mainMenu.addEventListener("rollover", menuButtonOver);
         player.image.x = stage.canvas.width / 2 - mainMenu.regX - player.width;
         player.image.y = mainMenu.y;
+        red = new objects.Background(stage, game, "red");
+        heartBreak = new objects.HeartBreak(stage, game);
+        heartBreak.resetAlpha();
+        red.resetAlpha();
         stage.addChild(game);
     }
     states.gameOver = gameOver;

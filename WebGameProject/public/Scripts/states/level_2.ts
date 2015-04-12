@@ -15,6 +15,8 @@ module states {
         cherry.update();
         bottles.update();
         player.update();
+        heartBreak.update();
+        red.disappear();
         document.onkeydown = handleKeyDown;
         for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
             zombies[count].update();
@@ -75,6 +77,10 @@ module states {
 
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
+
+        red = new objects.Background(stage, game, "red");
+        red.image.alpha = 0;
+        heartBreak = new objects.HeartBreak(stage, game);
 
         // Instantiate Collision Manager
         collision = new managers.Collision(player, cherry, zombies, scoreboard);

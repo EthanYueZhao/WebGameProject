@@ -10,6 +10,8 @@ module states {
     'use strict'
     export function gameOverState() {
         background.goAround();
+        heartBreak.update();
+        red.disappear();
     }
 
     // Restart Game when Try Again Button is clicked
@@ -62,6 +64,12 @@ module states {
 
         player.image.x = stage.canvas.width / 2 - mainMenu.regX - player.width;
         player.image.y = mainMenu.y;
+
+        red = new objects.Background(stage, game, "red");
+        heartBreak = new objects.HeartBreak(stage, game);
+
+        heartBreak.resetAlpha();
+        red.resetAlpha();
 
         stage.addChild(game);
 

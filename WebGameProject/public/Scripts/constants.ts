@@ -18,4 +18,5 @@
     export var BACKGROUND_STEP: number = 0.5;
     export var WALLS_NUM: number = 16;
     export var PLAYER_STEP: number = 16;
+    export var DISAPPEAR: number = 0.01;
 }

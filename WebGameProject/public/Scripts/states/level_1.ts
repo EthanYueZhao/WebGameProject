@@ -8,12 +8,17 @@
 /// <reference path="../objects/heart.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../managers/collision.ts" />
+/// <reference path="../objects/heartBreak.ts" />
+
 module states {
     export function level_1_State() {
         background.update();
         cherry.update();
         bottles.update();
         player.update();
+        heartBreak.update();
+        red.disappear();
+        
         document.onkeydown = handleKeyDown;
         for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
             zombies[count].update();
@@ -63,11 +68,13 @@ module states {
         for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
             zombies[count] = new objects.Zombie(stage, game, "zombie" + count);
         }
-
-
        
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
+
+        red = new objects.Background(stage, game, "red");
+        red.image.alpha = 0;
+        heartBreak = new objects.HeartBreak(stage, game);
 
         // Instantiate Collision Manager
         collision = new managers.Collision(player, cherry, zombies, scoreboard);
