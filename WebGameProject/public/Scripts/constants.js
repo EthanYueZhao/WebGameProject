@@ -15,7 +15,8 @@ var constants;
     constants.LABEL_FONT = "50px Vijaya";
     constants.LABEL_COLOUR = "#FF0000";
     constants.PLANE_LIVES = 3;
-    constants.BACKGROUND_STEP = 1;
+    constants.BACKGROUND_STEP = 0.5;
     constants.WALLS_NUM = 16;
+    constants.PLAYER_STEP = 16;
 })(constants || (constants = {}));
 //# sourceMappingURL=constants.js.map
