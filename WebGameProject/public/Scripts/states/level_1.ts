@@ -60,7 +60,7 @@ module states {
         }
 
         // Label to check level
-        levelLabel = new objects.Label(stage.canvas.width - 100, 30, "LEVEL 1");
+        levelLabel = new objects.Label(stage.canvas.width - 100, 30, "NORMAL");
 
         // Show Cursor
         stage.cursor = "none";

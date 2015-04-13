@@ -66,6 +66,7 @@ module states {
         cherry = new objects.Food(stage, game, "cherry");
         bottles = new objects.Food(stage, game, "bottles");
         player = new objects.Player(stage, game);
+
         for (var i = 0; i < 3; i++) {
             heart[i] = new objects.Heart(stage, game);
             heart[i].reset(i);
@@ -76,13 +77,8 @@ module states {
         firewall.y = 0;
         game.addChild(firewall);
 
-        for (var i = 0; i < 3; i++) {
-            heart[i] = new objects.Heart(stage, game);
-            heart[i].reset(i);
-        }
-
         // Label to check level
-        levelLabel = new objects.Label(stage.canvas.width - 100, 30, "LEVEL 3");
+        levelLabel = new objects.Label(stage.canvas.width - 100, 30, "HELL");
 
         // Show Cursor
         stage.cursor = "none";
