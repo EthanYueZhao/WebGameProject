@@ -53,7 +53,6 @@ module managers {
                     this.loseLife();
                 }
 
-
                 zombie.reset();
             }
         }
@@ -81,6 +80,7 @@ module managers {
             this.playerAndFood();
         }
 
+        // Effect of losing lives
         loseLife() {
             createjs.Sound.play("Crash");
             for (var pos = 0; pos < scoreboard.lives; pos++) {

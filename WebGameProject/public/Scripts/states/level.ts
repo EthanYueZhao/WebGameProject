@@ -8,6 +8,7 @@
 /// <reference path="../objects/label.ts" />
 module states {
     'use strict'
+    // level1 button
     export function level_1_Clicked(event: MouseEvent) {
         stage.removeChild(game);
         player.destroy();
@@ -17,6 +18,7 @@ module states {
         changeState(currentState);
     }
 
+    // level2 button
     export function level_2_Clicked(event: MouseEvent) {
         stage.removeChild(game);
         player.destroy();
@@ -26,6 +28,7 @@ module states {
         changeState(currentState);
     }
 
+    // level3 button
     export function level_3_Clicked(event: MouseEvent) {
         stage.removeChild(game);
         player.destroy();
@@ -35,16 +38,19 @@ module states {
         changeState(currentState);
     }
 
+    // mouse over level1 button
     export function level_1_Over(event: MouseEvent) {
         player.image.x = stage.canvas.width / 2 - level_1_Button.regX - player.width;
         player.image.y = level_1_Button.y;
     }
 
+    // mouse over level2 button
     export function level_2_Over(event: MouseEvent) {
         player.image.x = stage.canvas.width / 2 - level_2_Button.regX - player.width;
         player.image.y = level_2_Button.y;
     }
 
+    // mouse over level3 button
     export function level_3_Over(event: MouseEvent) {
         player.image.x = stage.canvas.width / 2 - level_3_Button.regX - player.width;
         player.image.y = level_3_Button.y;
@@ -73,23 +79,25 @@ module states {
         gameLevelLabel = new objects.Label(stage.canvas.width / 2, 70, "Select The Difficulty");
         game.addChild(gameLevelLabel);
 
-        // Display Play Again Button
+        // Display Level1 Button
         level_1_Button = new objects.Button(stage.canvas.width / 2, 170, "normalBtn");
         game.addChild(level_1_Button);
         level_1_Button.addEventListener("click", level_1_Clicked);
         level_1_Button.addEventListener("rollover", level_1_Over);
 
-        // Display Instruction Button
+        // Display Level2 Button
         level_2_Button = new objects.Button(stage.canvas.width / 2, 270, "veteranBtn");
         game.addChild(level_2_Button);
         level_2_Button.addEventListener("click", level_2_Clicked);
         level_2_Button.addEventListener("rollover", level_2_Over);
 
+        // Display Level3 Button
         level_3_Button = new objects.Button(stage.canvas.width / 2, 370, "hellBtn");
         game.addChild(level_3_Button);
         level_3_Button.addEventListener("click", level_3_Clicked);
         level_3_Button.addEventListener("rollover", level_3_Over);
 
+        // set the position of the player
         player.image.x = stage.canvas.width / 2 - level_2_Button.regX - player.width;
         player.image.y = level_2_Button.y;
 

@@ -19,19 +19,23 @@ var objects;
             this.y = y;
             this.setButtonListeners();
         }
+        // set the button listeners
         Button.prototype.setButtonListeners = function () {
             this.cursor = 'pointer';
             this.on('rollover', this.onButtonOver);
             this.on('rollout', this.onButtonOut);
             this.on('mousedown', this.onButtonDown);
         };
+        // mouse over 
         Button.prototype.onButtonOver = function () {
             this.alpha = 0.8;
             createjs.Sound.play("Select", { loop: 1 });
         };
+        // mouse out
         Button.prototype.onButtonOut = function () {
             this.alpha = 1;
         };
+        // click
         Button.prototype.onButtonDown = function () {
             this.alpha = 0.4;
             createjs.Sound.play("Click", { loop: 1 });

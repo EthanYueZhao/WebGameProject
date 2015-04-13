@@ -22,6 +22,7 @@ module objects {
             game.addChild(this.image);
         }
 
+        // update the position of zombies with AI
         update() {
             if (player.image.y > this.image.y) {
                 if (this.isMoveable(40)) {
@@ -51,6 +52,7 @@ module objects {
             //}
         }
 
+        // reset the zombies
         reset() {
             this.image.x = this.stage.canvas.width + this.width;
             this.image.y = Math.floor(Math.random() * this.stage.canvas.height);
@@ -58,10 +60,12 @@ module objects {
             this.dy = Math.random() * 0.9 + 0.5;
         }
 
+        // remove the zombies
         destroy() {
             game.removeChild(this.image);
         }
 
+        // check if the zombies collide with the wall 
         private isMoveable(key: number) {
             if (walls.length === 0) {
                 return true;
@@ -87,6 +91,7 @@ module objects {
 
         }
 
+        // function of collision with the walls
         private collisionWithWalls(x: number, y: number) {
             var result: boolean;
             for (var i = 0, j = walls.length; i < j; i++) {

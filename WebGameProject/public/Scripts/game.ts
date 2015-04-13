@@ -27,7 +27,7 @@
 // author: Yue Zhao
 // last edited at Mar-19,2015
 
-
+// objects & states
 var stage: createjs.Stage;
 var game: createjs.Container;
 

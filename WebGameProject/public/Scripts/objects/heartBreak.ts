@@ -22,18 +22,21 @@ module objects {
 
             game.addChild(this.image);
         }
+        // follow the player
         update() {
             this.image.x = player.image.x;
             this.image.y = player.image.y;
             this.disappear();
         }
 
+        // make the heartBreak disappear
         disappear() {
             if (this.image.alpha > 0) {
                 this.image.alpha -= this.dx;
             }
         }
 
+        // make the heartBreak appear
         resetAlpha() {
             this.image.alpha = 0.5;
         }

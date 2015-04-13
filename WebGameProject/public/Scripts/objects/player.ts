@@ -48,6 +48,7 @@ module objects {
             game.removeChild(this.image);
         }
 
+        // check if the player has enough scores to fight
         checkFight() {
             if (scoreboard.score <= 0) {
                 this.fightAble = false;
@@ -56,6 +57,8 @@ module objects {
                 this.fightAble = true;
             }
         }
+
+        // set the function of button
         move(e) {
             switch (e.keyCode) {
                 case 37:
@@ -64,7 +67,7 @@ module objects {
                             this.image.x = 10
                         } else {
                             this.image.x -= constants.PLAYER_STEP;
-                            this.image.scaleX = -1;
+                            this.image.scaleX = -1; // make the player turn left
                         }
                     }
                     break;
@@ -83,7 +86,7 @@ module objects {
                             this.image.x = 620
                         } else {
                             this.image.x += constants.PLAYER_STEP;
-                            this.image.scaleX = 1;
+                            this.image.scaleX = 1;  // make the player turn right
                         }
                     }
                     break;
@@ -109,6 +112,7 @@ module objects {
             }
         }
 
+        // check if the player collides with the wall 
         private isMoveable(key: number) {
             if (walls.length === 0) {
                 return true;
@@ -134,6 +138,7 @@ module objects {
 
         }
 
+        // function of collision with walls
         private collisionWithWalls(x: number, y: number) {
             var result: boolean;
             for (var i = 0, j = walls.length; i < j; i++) {

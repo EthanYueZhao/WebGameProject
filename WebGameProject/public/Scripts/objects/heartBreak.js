@@ -15,16 +15,19 @@ var objects;
             this.dx = constants.DISAPPEAR;
             game.addChild(this.image);
         }
+        // follow the player
         HeartBreak.prototype.update = function () {
             this.image.x = player.image.x;
             this.image.y = player.image.y;
             this.disappear();
         };
+        // make the heartBreak disappear
         HeartBreak.prototype.disappear = function () {
             if (this.image.alpha > 0) {
                 this.image.alpha -= this.dx;
             }
         };
+        // make the heartBreak appear
         HeartBreak.prototype.resetAlpha = function () {
             this.image.alpha = 0.5;
         };

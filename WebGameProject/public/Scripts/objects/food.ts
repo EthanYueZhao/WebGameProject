@@ -23,6 +23,7 @@ module objects {
             game.addChild(this.image);
         }
 
+        // move the food
         update() {
             this.image.x -= this.dx;
             if (this.image.x < -this.width) {
@@ -30,11 +31,13 @@ module objects {
             }
         }
 
+        // reset the position of the food
         reset() {
             this.image.y = Math.floor(Math.random() * this.stage.canvas.height);
             this.image.x = this.stage.canvas.width + this.width;
         }
 
+        // remove the food
         destroy() {
             game.removeChild(this.image);
         }

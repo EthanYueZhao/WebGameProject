@@ -59,6 +59,7 @@ module states {
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
 
+        // set the position of the player
         player.image.x = stage.canvas.width / 2 - playButton.regX - player.width;
         player.image.y = playButton.y;
 

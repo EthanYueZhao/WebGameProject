@@ -14,6 +14,7 @@ var objects;
             this.reset();
             game.addChild(this.image);
         }
+        // update the position of zombies with AI
         Zombie.prototype.update = function () {
             if (player.image.y > this.image.y) {
                 if (this.isMoveable(40)) {
@@ -39,15 +40,18 @@ var objects;
             //    this.reset();
             //}
         };
+        // reset the zombies
         Zombie.prototype.reset = function () {
             this.image.x = this.stage.canvas.width + this.width;
             this.image.y = Math.floor(Math.random() * this.stage.canvas.height);
             this.dx = Math.random() * 0.9 + 0.5;
             this.dy = Math.random() * 0.9 + 0.5;
         };
+        // remove the zombies
         Zombie.prototype.destroy = function () {
             game.removeChild(this.image);
         };
+        // check if the zombies collide with the wall 
         Zombie.prototype.isMoveable = function (key) {
             if (walls.length === 0) {
                 return true;
@@ -71,6 +75,7 @@ var objects;
                 return result;
             }
         };
+        // function of collision with the walls
         Zombie.prototype.collisionWithWalls = function (x, y) {
             var result;
             for (var i = 0, j = walls.length; i < j; i++) {

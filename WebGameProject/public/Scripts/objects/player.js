@@ -39,6 +39,7 @@ var objects;
             //this.engineSound.stop();
             game.removeChild(this.image);
         };
+        // check if the player has enough scores to fight
         Player.prototype.checkFight = function () {
             if (scoreboard.score <= 0) {
                 this.fightAble = false;
@@ -47,6 +48,7 @@ var objects;
                 this.fightAble = true;
             }
         };
+        // set the function of button
         Player.prototype.move = function (e) {
             switch (e.keyCode) {
                 case 37:
@@ -56,7 +58,7 @@ var objects;
                         }
                         else {
                             this.image.x -= constants.PLAYER_STEP;
-                            this.image.scaleX = -1;
+                            this.image.scaleX = -1; // make the player turn left
                         }
                     }
                     break;
@@ -77,7 +79,7 @@ var objects;
                         }
                         else {
                             this.image.x += constants.PLAYER_STEP;
-                            this.image.scaleX = 1;
+                            this.image.scaleX = 1; // make the player turn right
                         }
                     }
                     break;
@@ -103,6 +105,7 @@ var objects;
                     break;
             }
         };
+        // check if the player collides with the wall 
         Player.prototype.isMoveable = function (key) {
             if (walls.length === 0) {
                 return true;
@@ -126,6 +129,7 @@ var objects;
                 return result;
             }
         };
+        // function of collision with walls
         Player.prototype.collisionWithWalls = function (x, y) {
             var result;
             for (var i = 0, j = walls.length; i < j; i++) {

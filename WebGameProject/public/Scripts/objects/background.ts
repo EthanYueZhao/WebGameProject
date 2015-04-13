@@ -33,6 +33,7 @@ module objects {
             }
         }
 
+        // level 3 two functions of double background
         updateOnly() {
             this.image.x -= this.dx;
         }
@@ -41,19 +42,23 @@ module objects {
             this.image.x = this.width - 20;
         }
 
+        // reset the background to 0
         reset() {
             this.image.x = 0;
         }
 
+        // remove the image
         destroy() {
             game.removeChild(this.image);
         }
 
+        // move the double background
         goAround() {
             this.image.x -= this.xBG;
             this.checkBG();
         }
 
+        // check if the background is out of the screen
         checkBG() {
             if (this.image.x < -(this.width - 640)) {
                 this.xBG = -constants.BACKGROUND_STEP;
@@ -63,12 +68,14 @@ module objects {
             }
         }
 
+        // make the red color disappear
         disappear() {
             if (this.image.alpha > 0) {
                 this.image.alpha -= this.disX;
             }
         }
 
+        // make the red appear again
         resetAlpha() {
             this.image.alpha = 0.5;
         }

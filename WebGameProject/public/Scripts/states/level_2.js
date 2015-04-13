@@ -68,6 +68,7 @@ var states;
         }
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
+        // add red color
         red = new objects.Background(stage, game, "red");
         red.image.alpha = 0;
         heartBreak = new objects.HeartBreak(stage, game);

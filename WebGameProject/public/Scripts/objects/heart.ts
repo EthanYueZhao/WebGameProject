@@ -22,12 +22,14 @@ module objects {
             game.addChild(this.image);
         }
 
+        // reset the heart position
         reset(pos: number) {
             this.image.y = 30;
             this.image.x = pos * 50 + 40;
             game.addChild(this.image);
         }
 
+        // remove the heart
         destroy() {
             game.removeChild(this.image);
         }

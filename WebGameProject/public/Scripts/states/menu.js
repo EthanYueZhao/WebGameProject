@@ -10,6 +10,7 @@ var states;
 (function (states) {
     'use strict';
     var xBG;
+    // play button click
     function playButtonClicked(event) {
         stage.removeChild(game);
         player.destroy();
@@ -19,11 +20,13 @@ var states;
         changeState(currentState);
     }
     states.playButtonClicked = playButtonClicked;
+    // play button over
     function playButtonOver(event) {
         player.image.x = stage.canvas.width / 2 - playButton.regX - player.width;
         player.image.y = playButton.y;
     }
     states.playButtonOver = playButtonOver;
+    // instruction button over
     function instructionButtonOver(event) {
         player.image.x = stage.canvas.width / 2 - instructionButton.regX - player.width;
         player.image.y = instructionButton.y;
@@ -56,6 +59,7 @@ var states;
         game.addChild(instructionButton);
         instructionButton.addEventListener("click", states.instructionButtonClicked);
         instructionButton.addEventListener("rollover", instructionButtonOver);
+        // set the position of the player
         player.image.x = stage.canvas.width / 2 - playButton.regX - player.width;
         player.image.y = playButton.y;
         stage.addChild(game);
