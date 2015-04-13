@@ -26,6 +26,7 @@ var states;
     function instruction() {
         var instructionLabel;
         var instructionContent;
+        var instructionContentShadow;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
@@ -38,6 +39,10 @@ var states;
         instructionLabel = new objects.Label(stage.canvas.width / 2, 50, "Instruction");
         game.addChild(instructionLabel);
         // display instruction content
+        instructionContentShadow = new createjs.Text(" Collect food\n Beat Zombies\n Survive as long as possible\n\n Use arrow keys to move\n Use space key to fight\n Each fight costs 20 scores", "30px Vijaya", "yellow");
+        instructionContentShadow.x = stage.canvas.width / 2 - 100 + 1;
+        instructionContentShadow.y = 100 + 1;
+        game.addChild(instructionContentShadow);
         instructionContent = new createjs.Text(" Collect food\n Beat Zombies\n Survive as long as possible\n\n Use arrow keys to move\n Use space key to fight\n Each fight costs 20 scores", "30px Vijaya", "blue");
         instructionContent.x = stage.canvas.width / 2 - 100;
         instructionContent.y = 100;

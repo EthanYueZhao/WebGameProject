@@ -64,6 +64,7 @@ module objects {
                             this.image.x = 10
                         } else {
                             this.image.x -= constants.PLAYER_STEP;
+                            this.image.scaleX = -1;
                         }
                     }
                     break;
@@ -82,6 +83,7 @@ module objects {
                             this.image.x = 620
                         } else {
                             this.image.x += constants.PLAYER_STEP;
+                            this.image.scaleX = 1;
                         }
                     }
                     break;

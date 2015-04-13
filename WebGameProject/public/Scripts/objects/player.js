@@ -56,6 +56,7 @@ var objects;
                         }
                         else {
                             this.image.x -= constants.PLAYER_STEP;
+                            this.image.scaleX = -1;
                         }
                     }
                     break;
@@ -76,6 +77,7 @@ var objects;
                         }
                         else {
                             this.image.x += constants.PLAYER_STEP;
+                            this.image.scaleX = 1;
                         }
                     }
                     break;
