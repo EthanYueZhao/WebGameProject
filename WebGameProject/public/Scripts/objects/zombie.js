@@ -29,11 +29,13 @@ var objects;
             if (player.image.x > this.image.x) {
                 if (this.isMoveable(39)) {
                     this.image.x += this.dx;
+                    this.image.scaleX = -1;
                 }
             }
             if (player.image.x < this.image.x) {
                 if (this.isMoveable(37)) {
                     this.image.x -= this.dx;
+                    this.image.scaleX = 1;
                 }
             }
             //if (this.image.x < -this.width) {

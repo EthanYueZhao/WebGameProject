@@ -14,11 +14,13 @@ var objects;
             this.dx = 3;
             game.addChild(this.image);
         }
+        // reset the heart position
         Heart.prototype.reset = function (pos) {
             this.image.y = 30;
             this.image.x = pos * 50 + 40;
             game.addChild(this.image);
         };
+        // remove the heart
         Heart.prototype.destroy = function () {
             game.removeChild(this.image);
         };
