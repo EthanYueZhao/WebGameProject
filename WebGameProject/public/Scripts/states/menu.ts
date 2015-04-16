@@ -10,6 +10,7 @@ module states {
     'use strict'
     var xBG;
 
+    // play button click
     export function playButtonClicked(event: MouseEvent) {
         stage.removeChild(game);
         player.destroy();
@@ -19,11 +20,13 @@ module states {
         changeState(currentState);
     }
 
+    // play button over
     export function playButtonOver(event: MouseEvent) {
         player.image.x = stage.canvas.width / 2 - playButton.regX - player.width;
         player.image.y = playButton.y;
     }
 
+    // instruction button over
     export function instructionButtonOver(event: MouseEvent) {
         player.image.x = stage.canvas.width / 2 - instructionButton.regX - player.width;
         player.image.y = instructionButton.y;
@@ -63,6 +66,7 @@ module states {
         instructionButton.addEventListener("click", instructionButtonClicked);
         instructionButton.addEventListener("rollover", instructionButtonOver);
 
+        // set the position of the player
         player.image.x = stage.canvas.width / 2 - playButton.regX - player.width;
         player.image.y = playButton.y;
 

@@ -25,6 +25,7 @@
 // file name: game.ts
 // author: Yue Zhao
 // last edited at Mar-19,2015
+// objects & states
 var stage;
 var game;
 var background;

@@ -16,10 +16,12 @@ var objects;
             this.label.y = 5;
             game.addChild(this.label);
         }
+        // update the score board status
         Scoreboard.prototype.update = function () {
             this.labelText = " Score: " + this.score.toString();
             this.label.text = this.labelText;
         };
+        // remove the score board
         Scoreboard.prototype.destroy = function () {
             game.removeChild(this.label);
         };

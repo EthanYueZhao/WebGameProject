@@ -54,6 +54,8 @@ module states {
         cherry = new objects.Food(stage, game, "cherry");
         bottles = new objects.Food(stage, game, "bottles");
         player = new objects.Player(stage, game);
+
+        // display lives using hearts
         for (var i = 0; i < 3; i++) {
             heart[i] = new objects.Heart(stage, game);
             heart[i].reset(i);
@@ -73,6 +75,7 @@ module states {
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
 
+        // add red color
         red = new objects.Background(stage, game, "red");
         red.image.alpha = 0;
         heartBreak = new objects.HeartBreak(stage, game);

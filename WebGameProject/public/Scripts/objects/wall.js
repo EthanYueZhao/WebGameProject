@@ -15,16 +15,19 @@ var objects;
             this.dx = constants.BACKGROUND_STEP;
             game.addChild(this.image);
         }
+        // update the position of the walls
         Wall.prototype.update = function () {
             this.image.x -= this.dx;
             if (this.image.x < -this.width) {
                 this.reset();
             }
         };
+        // reset the position of the walls
         Wall.prototype.reset = function () {
             this.image.y = Math.floor(Math.random() * this.stage.canvas.height);
             this.image.x = Math.floor(Math.random() * this.stage.canvas.width + this.stage.canvas.width) + this.width;
         };
+        // remove the walls
         Wall.prototype.destroy = function () {
             game.removeChild(this.image);
         };

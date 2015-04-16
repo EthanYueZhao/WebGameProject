@@ -22,22 +22,27 @@ var objects;
                 this.reset();
             }
         };
+        // level 3 two functions of double background
         Background.prototype.updateOnly = function () {
             this.image.x -= this.dx;
         };
         Background.prototype.resetOnly = function () {
             this.image.x = this.width - 20;
         };
+        // reset the background to 0
         Background.prototype.reset = function () {
             this.image.x = 0;
         };
+        // remove the image
         Background.prototype.destroy = function () {
             game.removeChild(this.image);
         };
+        // move the double background
         Background.prototype.goAround = function () {
             this.image.x -= this.xBG;
             this.checkBG();
         };
+        // check if the background is out of the screen
         Background.prototype.checkBG = function () {
             if (this.image.x < -(this.width - 640)) {
                 this.xBG = -constants.BACKGROUND_STEP;
@@ -46,11 +51,13 @@ var objects;
                 this.xBG = constants.BACKGROUND_STEP;
             }
         };
+        // make the red color disappear
         Background.prototype.disappear = function () {
             if (this.image.alpha > 0) {
                 this.image.alpha -= this.disX;
             }
         };
+        // make the red appear again
         Background.prototype.resetAlpha = function () {
             this.image.alpha = 0.5;
         };

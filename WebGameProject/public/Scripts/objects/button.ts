@@ -12,6 +12,7 @@ module objects {
             this.setButtonListeners();
         }
 
+        // set the button listeners
         setButtonListeners() {
             this.cursor = 'pointer';
             this.on('rollover', this.onButtonOver);
@@ -19,15 +20,18 @@ module objects {
             this.on('mousedown', this.onButtonDown);
         }
 
+        // mouse over 
         onButtonOver() {
             this.alpha = 0.8;
             createjs.Sound.play("Select", { loop: 1 });
         }
 
+        // mouse out
         onButtonOut() {
             this.alpha = 1;
         }
 
+        // click
         onButtonDown() {
             this.alpha = 0.4;
             createjs.Sound.play("Click", { loop: 1 });

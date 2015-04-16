@@ -67,15 +67,17 @@ module states {
         bottles = new objects.Food(stage, game, "bottles");
         player = new objects.Player(stage, game);
 
-        for (var i = 0; i < 3; i++) {
-            heart[i] = new objects.Heart(stage, game);
-            heart[i].reset(i);
-        }
-
+        // display firewall
         var firewall = new createjs.Sprite(managers.Assets.fwSheet, "firewall");
         firewall.x = 0;
         firewall.y = 0;
         game.addChild(firewall);
+
+        // display lives using hearts
+        for (var i = 0; i < 3; i++) {
+            heart[i] = new objects.Heart(stage, game);
+            heart[i].reset(i);
+        }
 
         // Label to check level
         levelLabel = new objects.Label(stage.canvas.width - 100, 30, "HELL");
@@ -91,6 +93,7 @@ module states {
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
 
+        // add red color
         red = new objects.Background(stage, game, "red");
         red.image.alpha = 0;
         heartBreak = new objects.HeartBreak(stage, game);
@@ -105,6 +108,7 @@ module states {
         stage.addChild(game);
     }
 
+    // check if the player goes to the firewall
     function checkDeadline() {
         if (player.image.x < 50) {
             loseLife();
@@ -112,6 +116,7 @@ module states {
         }
     }
 
+    // function of loseLife
     function loseLife() {
         createjs.Sound.play("Crash");
         for (var pos = 0; pos < scoreboard.lives; pos++) {
@@ -126,6 +131,7 @@ module states {
         red.resetAlpha();
     }
 
+    // check the background
     function checkBG() {
         if (background.image.x < -background.width) {
             background.resetOnly();

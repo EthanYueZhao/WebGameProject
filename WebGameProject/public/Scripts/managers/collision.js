@@ -66,6 +66,7 @@ var managers;
             }
             this.playerAndFood();
         };
+        // Effect of losing lives
         Collision.prototype.loseLife = function () {
             createjs.Sound.play("Crash");
             for (var pos = 0; pos < scoreboard.lives; pos++) {

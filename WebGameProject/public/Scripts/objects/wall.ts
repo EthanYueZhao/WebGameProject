@@ -23,6 +23,7 @@ module objects {
             game.addChild(this.image);
         }
 
+        // update the position of the walls
         update() {
             this.image.x -= this.dx;
             if (this.image.x < -this.width) {
@@ -30,11 +31,13 @@ module objects {
             }
         }
 
+        // reset the position of the walls
         reset() {
             this.image.y = Math.floor(Math.random() * this.stage.canvas.height);
             this.image.x = Math.floor(Math.random() * this.stage.canvas.width + this.stage.canvas.width) + this.width;
         }
 
+        // remove the walls
         destroy() {
             game.removeChild(this.image);
         }

@@ -23,6 +23,7 @@ module states {
         changeState(currentState);
     }
 
+    // effect of mouseover
     export function menuButtonOver(event: MouseEvent) {
         player.image.x = stage.canvas.width / 2 - mainMenu.regX - player.width;
         player.image.y = mainMenu.y;
@@ -58,17 +59,21 @@ module states {
         finalScore = new objects.Label(stage.canvas.width / 2, 160, scoreboard.score.toString());
         game.addChild(finalScore);
 
+        // Add menu button
         mainMenu = new objects.Button(stage.canvas.width / 2, 300, "mainmenuBtn");
         game.addChild(mainMenu);
         mainMenu.addEventListener("click", mainMenuClicked);
         mainMenu.addEventListener("rollover", menuButtonOver);
 
+        // set the position of the player
         player.image.x = stage.canvas.width / 2 - mainMenu.regX - player.width;
         player.image.y = mainMenu.y;
 
+        // add the red color
         red = new objects.Background(stage, game, "red");
         heartBreak = new objects.HeartBreak(stage, game);
 
+        // display get hit effect
         heartBreak.resetAlpha();
         red.resetAlpha();
 

@@ -15,16 +15,19 @@ var objects;
             this.dx = 3;
             game.addChild(this.image);
         }
+        // move the food
         Food.prototype.update = function () {
             this.image.x -= this.dx;
             if (this.image.x < -this.width) {
                 this.reset();
             }
         };
+        // reset the position of the food
         Food.prototype.reset = function () {
             this.image.y = Math.floor(Math.random() * this.stage.canvas.height);
             this.image.x = this.stage.canvas.width + this.width;
         };
+        // remove the food
         Food.prototype.destroy = function () {
             game.removeChild(this.image);
         };

@@ -24,11 +24,13 @@
             game.addChild(this.label);            
         }
 
+        // update the score board status
         update() {
             this.labelText = " Score: " + this.score.toString();
             this.label.text = this.labelText;
         }
 
+        // remove the score board
         destroy() {
             game.removeChild(this.label);
         }
